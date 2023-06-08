@@ -8,17 +8,21 @@ mkdir -p ~/.config
 shopt -s dotglob
 
 for f in home/*; do
-  if [[ $yn != 'a' ]]; then
-    read -p "Install $f? (yes/no/all/quit) " yn
+  if [[ $yn != 'a' ]] && [[ $yn != 's' ]]; then
+    read -p "Install $f? (yes/no/all/quit/skip) " yn
   fi
   case $yn in
     all|a|y|yes)
-      ln -sf `pwd`/$f $HOME/`basename $f`;;
+      if [[ -L $HOME/`basename $f` ]]; then
+        ln -sf `pwd`/$f $HOME/`basename $f`;
+      fi;;
     n|no) 
       echo "skipping...";;
     q|quit)
       echo 'exitting.';
       exit 0;;
+    s|skip)
+      ;;
     *)
       echo "Didn't understand, panicking.";
       exit 1;;
@@ -28,8 +32,8 @@ done;
 yn=""
 
 for f in config/*; do
-  if [[ $yn != 'a' ]]; then
-    read -p "Install $f? (yes/no/all) " yn
+  if [[ $yn != 'a' ]] && [[ $yn != 's' ]]; then
+    read -p "Install $f? (yes/no/all/quit/skip) " yn
   fi
   case $yn in
     all|a|y|yes)
@@ -39,6 +43,8 @@ for f in config/*; do
     q|quit)
       echo 'exitting.';
       exit 0;;
+    s|skip)
+      ;;
     *)
       echo "Didn't understand, panicking.";
       exit 1;;
@@ -50,10 +56,21 @@ if [[ $yn == 'y' ]]; then
   cd yay
   makepkg -si
   cd ..
-  PACKAGES="hyprland-git"
-  read -p "Install ? (yes/no) " yn
+  yay -Sy;
   
-fi  
+fi
+PACKAGES="hyprland-git eww-wayland-git nerd-fonts fuzzel rofi dunst mpvpaper-git socat geticons macchina nitch trayer"
+for p in $PACKAGES; do
+  if [[ $yn != 'a' ]] || [[ $yn != 'q' ]]; then
+    read -p "Install $p? (yes/no/all) " yn
+  fi
+  case $yn in
+    all|a|y|yes)
+      yay -S $p;;
+    n|no|q|quit) 
+      echo "skipping... $p";;
+  esac
+done   
 
 
 ln -sf `pwd`/powerlevel10k $HOME/.oh-my-zsh/custom/themes/powerlevel10k
