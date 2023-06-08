@@ -14,8 +14,9 @@ for f in home/*; do
   case $yn in
     all|a|y|yes)
       if [[ -L $HOME/`basename $f` ]]; then
-        ln -sf `pwd`/$f $HOME/`basename $f`;
-      fi;;
+        rm $HOME/`basename $f`;
+      fi;
+      ln -sf `pwd`/$f $HOME/`basename $f`;;
     n|no) 
       echo "skipping...";;
     q|quit)
@@ -37,6 +38,9 @@ for f in config/*; do
   fi
   case $yn in
     all|a|y|yes)
+      if [[ -L $HOME/.config/`basename $f` ]]; then
+        rm $HOME/.config/`basename $f`;
+      fi;
       ln -sf `pwd`/$f $HOME/.config/`basename $f`;;
     n|no) 
       echo "skipping...";;
