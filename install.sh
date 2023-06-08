@@ -88,6 +88,9 @@ source /usr/share/nvm/init-nvm.sh
 nvm install --lts
 chsh -s /bin/zsh
 
+mkdir -p $HOME/Wallpaper/Clips
+echo Put your wallpaper images in $HOME/Wallpaper
+echo Put your wallpaper videos in $HOME/Wallpaper/Clips
 
-echo "Log out and log back in."
+echo "Log out and log back in. Run 'Hyprland' to start UI."
 
