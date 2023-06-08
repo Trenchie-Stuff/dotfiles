@@ -63,7 +63,13 @@ if [[ $yn == 'y' ]]; then
   yay -Sy;
   
 fi
-PACKAGES="hyprland-git eww-wayland-git nerd-fonts fuzzel rofi dunst mpvpaper-git socat geticons macchina nitch trayer"
+read -p "Install and config rustup? (required for fonts)" yn
+if [[ $yn == 'y' ]]; then
+  yay -S rustup
+  rustup default stable
+fi;
+
+PACKAGES="scdoc nerd-fonts-inter hyprland-git eww-wayland nerd-fonts fuzzel rofi dunst mpvpaper-git socat geticons macchina nitch trayer"
 for p in $PACKAGES; do
   if [[ $yn != 'a' ]] || [[ $yn != 'q' ]]; then
     read -p "Install $p? (yes/no/all) " yn
