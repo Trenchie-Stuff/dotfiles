@@ -1,0 +1,23 @@
+#Monitor Configuration
+
+monitor=$BOT,3440x1440@100,0x1440,1
+monitor=$TOP,2560x1440@60,440x0,1
+monitor=HDMI-A-1,1920x1080@60,auto,1,mirror,$TOP
+monitor=,addreserved,60,0,3,50
+
+workspace=1,monitor:$BOT,default:true
+workspace=2,monitor:$BOT
+workspace=3,monitor:$BOT
+workspace=4,monitor:$BOT
+workspace=5,monitor:$BOT
+workspace=6,monitor:$BOT
+workspace=7,monitor:$BOT
+workspace=8,monitor:$BOT
+workspace=9,monitor:$TOP,default:true
+workspace=10,monitor:$TOP
+workspace=11,monitor:$TOP
+workspace=12,monitor:$TOP
+workspace=13,monitor:$TOP
+workspace=14,monitor:$TOP
+workspace=15,monitor:$TOP
+workspace=16,monitor:$TOP

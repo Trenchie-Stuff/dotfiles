@@ -1,0 +1,11 @@
+#! /bin/bash
+#Active window border flickers periodically
+flicker=1
+while [ $flicker -gt -1 ]; do
+  hyprctl --batch "keyword decoration:col.shadow 0xFF6AFF6A 0xFF6A6AFF 0xFFFF6A6A 0xFF6AFF6A 0xFF6A6AFF 0xFFFF6A6A ${flicker}deg"
+  sleep 0.1
+  ((flicker=flicker-1))
+  if [ $flicker -eq 0 ]; then
+    flicker=360
+  fi
+done
