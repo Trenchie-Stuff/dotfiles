@@ -45,10 +45,22 @@ for f in config/*; do
   esac
 done;
 
+read -p "Install yay (for Arch-ish, updates pacman cache)? (yes/no) " yn
+if [[ $yn == 'y' ]]; then
+  cd yay
+  makepkg -si
+  cd ..
+  PACKAGES="hyprland-git"
+  read -p "Install ? (yes/no) " yn
+  
+fi  
+
+
 ln -sf `pwd`/powerlevel10k $HOME/.oh-my-zsh/custom/themes/powerlevel10k
 source /usr/share/nvm/init-nvm.sh
 nvm install --lts
 chsh -s /bin/zsh
+
 
 echo "Log out and log back in."
 
