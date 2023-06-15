@@ -15,7 +15,7 @@ configuration {
     foreground-alt:             #c0c0c0;
     background-color:           #00000066;
     selected-foreground:        #f7d8c8;
-    selected-background:        #00000033;
+    selected-background:        #000000ff;
     separatorcolor:             #7c7c7c43;
     bordercolor:                #ff79c6;
     highlightcolor:             #8be9fd;
@@ -100,6 +100,8 @@ configuration {
 #element.selected {
     background-color:               @selected-background;
     text-color:                     @selected-foreground;
-	border:							0;
     border-radius:                  8;
+    border:                         2px;
+    border-color:                   #ffffff33;
+    padding:                        8px;
 }

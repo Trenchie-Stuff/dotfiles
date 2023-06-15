@@ -6,12 +6,14 @@ icontheme=$(grep "gtk-icon-theme-name" "$HOME"/.config/gtk-3.0/settings.ini | cu
 
 workspaces() {
 #echo $1
-if [[ ${1:0:13} == "activewindow>" ]]; then #set focused workspace
-    string=${1:14}
-    class="${string/,*/}"
-    export title=${string/,/ \| }
+if [[ ${1:0:14} == "activewindow>>" ]]; then #set focused workspace
+    winInfo=${1:14}
+    class="lol"
+    # class="${winInfo/,*/}"
+    export title=${winInfo/,/ \| }
     [[ $title == " | " ]] && unset title
     export iconpath=$(geticons "$class" -s 24 -c 1 -t "$icontheme" | head -n 1)
+    echo $title
 fi
 }
 

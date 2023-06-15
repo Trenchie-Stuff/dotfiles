@@ -6,15 +6,16 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+HIST_STAMPS="yyyy-mm-dd"
+
+plugins=(git tmux)
+
 zstyle ':omz:update' mode auto      # update automatically without asking
 
 zstyle ':omz:update' frequency 7
 
-HIST_STAMPS="yyyy-mm-dd"
-
-plugins=(git)
-
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -22,9 +23,9 @@ if [[ ":$PATH:" != *":$HOME/.dotnet/tools:"* ]]; then
   export PATH="$PATH:$HOME/.dotnet/tools"
 fi
 
-if [[ -n $SSH_CONNECTION ]]; then
-  export TERM="screen"
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#  export TERM="screen"
+#fi
 alias ll="ls -lA"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 autoload -Uz compinit
