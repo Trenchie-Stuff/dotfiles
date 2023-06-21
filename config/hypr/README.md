@@ -11,7 +11,7 @@ For complete system config, please see https://github.com/taylor85345/hyprland-d
 2. `mkdir ~/.config/hypr/themes`
 3. `cd ~/.config/hypr/themes`
 4. `git clone https://github.com/taylor85345/garden-hyprland-theme garden`
-5. Add `source=~/.config/hypr/themes/garden/theme.conf` to the end of your hyprland.conf
+5. Add `source=~/.config/hypr/theme.conf` to the end of your hyprland.conf
 
 ## Dependencies
 
