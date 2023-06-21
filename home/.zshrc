@@ -8,7 +8,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git tmux)
+plugins=(git)
 
 zstyle ':omz:update' mode auto      # update automatically without asking
 
