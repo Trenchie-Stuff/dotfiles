@@ -45,7 +45,7 @@
 (defpoll ESSID_WLAN :interval "1m" "scripts/wifi --ESSID")
 (defpoll WLAN_ICON :interval "1m" "scripts/wifi --ICON")
 (deflisten workspace "scripts/workspace")
-(deflisten workspace2 "scripts/workspace2")
+(deflisten workspace2 "scripts/workspace")
 (deflisten appname "scripts/appname")
 
 (defvar vol_reveal false)

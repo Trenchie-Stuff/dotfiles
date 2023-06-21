@@ -55,14 +55,14 @@ module() {
 #output eww widget
 echo 	"(eventbox :onscroll \"echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xargs hyprctl dispatch workspace\" \
           (box	:class \"works\"	:orientation \"v\" :spacing 5 :space-evenly \"false\" :valign \"center\"	\
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace 9\'\" :onrightclick \"hyprctl dispatch workspace 9 && $HOME/.config/hypr/scripts/default_app\" :class \"0mar 0$sp$o9$sp$f9\" \"${ic[1]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace 10\'\" :onrightclick \"hyprctl dispatch workspace 10 && $HOME/.config/hypr/scripts/default_app\" :class \"0mar 0$sp$o10$sp$f10\" \"${ic[2]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace 11\'\" :onrightclick \"hyprctl dispatch workspace 11 && $HOME/.config/hypr/scripts/default_app\" :class \"0mar 0$sp$o11$sp$f11\" \"${ic[3]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace 12\'\" :onrightclick \"hyprctl dispatch workspace 12 && $HOME/.config/hypr/scripts/default_app\" :class \"0mar 0$sp$o12$sp$f12\" \"${ic[4]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace 13\'\" :onrightclick \"hyprctl dispatch workspace 13 && $HOME/.config/hypr/scripts/default_app\" :class \"0mar 0$sp$o13$sp$f13\" \"${ic[5]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace 14\'\" :onrightclick \"hyprctl dispatch workspace 14 && $HOME/.config/hypr/scripts/default_app\" :class \"0mar 0$sp$o14$sp$f14\" \"${ic[6]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace 15\'\" :onrightclick \"hyprctl dispatch workspace 15 && $HOME/.config/hypr/scripts/default_app\" :class \"0mar 0$sp$o15$sp$f15\" \"${ic[7]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace 16\'\" :onrightclick \"hyprctl dispatch workspace 16 && $HOME/.config/hypr/scripts/default_app\" :class \"0mar 0$sp$o16$sp$f16\" \"${ic[8]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 9\'\" :onrightclick \"hyprctl dispatch workspace 9 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o9$sp$f9\" \"${ic[1]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 10\'\" :onrightclick \"hyprctl dispatch workspace 10 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o10$sp$f10\" \"${ic[2]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 11\'\" :onrightclick \"hyprctl dispatch workspace 11 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o11$sp$f11\" \"${ic[3]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 12\'\" :onrightclick \"hyprctl dispatch workspace 12 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o12$sp$f12\" \"${ic[4]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 13\'\" :onrightclick \"hyprctl dispatch workspace 13 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o13$sp$f13\" \"${ic[5]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 14\'\" :onrightclick \"hyprctl dispatch workspace 14 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o14$sp$f14\" \"${ic[6]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 15\'\" :onrightclick \"hyprctl dispatch workspace 15 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o15$sp$f15\" \"${ic[7]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 16\'\" :onrightclick \"hyprctl dispatch workspace 16 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o16$sp$f16\" \"${ic[8]}\") \
           )\
         )" | tee ~/.ewwt
 }
