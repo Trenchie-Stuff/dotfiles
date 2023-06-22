@@ -30,8 +30,8 @@
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
     #geometry = "300x5-100+100"
-    width = 300
-    height = 100
+    width = (300, 600)
+    height = (200, 500)
     offset = +5x+50
     origin = top-right
 
@@ -150,7 +150,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<i><b>%a</b></i>\n<b>%s</b>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -193,13 +193,13 @@
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
     # max_icon_size takes precedence over this.
-    min_icon_size = 0
+    min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/Papirus-Dark/16x16/actions:/usr/share/icons/Papirus-Dark/16x16/apps:/usr/share/icons/Papirus-Dark/16x16/categories:/usr/share/icons/Papirus-Dark/16x16/devices:/usr/share/icons/Papirus-Dark/16x16/emblems:/usr/share/icons/Papirus-Dark/16x16/emotes:/usr/share/icons/Papirus-Dark/16x16/mimetypes:/usr/share/icons/Papirus-Dark/16x16/places:/usr/share/icons/Papirus-Dark/16x16/status
 
     ### History ###
 
