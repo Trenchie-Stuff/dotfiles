@@ -131,6 +131,7 @@ if [[ $yayInstalled -eq 0 ]]; then
     dunst
     mpvpaper-git
     socat
+    neovim
     emacs
     geticons
     macchina
