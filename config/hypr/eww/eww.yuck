@@ -65,7 +65,7 @@
     :orientation "h"
     (button
         :onclick "rofi -no-lazy-grab -show drun -theme ~/.config/hypr/rofi/list_launcher.rasi &"
-        :class "iconlauncher" "")
+        :class "iconlauncher" "󰌪")
    ))
 
 (defwidget workspaces []
@@ -98,7 +98,7 @@
             :space-evenly "false"
             (button
                 :class "app-button"
-                :onclick "hyprctl dispatch togglefloating 1" "") 
+                :onclick "hyprctl dispatch togglefloating 1" "󰉪") 
 		  	    (button
 		  	        :class "app-button"
 		  	        :onclick "hyprctl dispatch fullscreen 1" "")
@@ -130,7 +130,7 @@
 	        (button
 	            :onclick "${EWW_CMD} open --toggle audio_ctl"
 	            :class "volume_icon"
-	            "墳"))))
+	            "󰕾"))))
 
 (defwidget weat []
     (box :vexpand "false" :hexpand "false" :orientation "h"
@@ -277,7 +277,7 @@
     (button
 	    :onclick "if ${EWW_CMD} state | grep 'rightside: false' ; then ${EWW_CMD} update rightside=true ; else ${EWW_CMD} update rightside=false ; fi"
       (label
-      :text ""))))
+      :text "󰵅"))))
   
 (defwidget sep []
   (box 

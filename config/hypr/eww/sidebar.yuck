@@ -26,7 +26,6 @@
             :class "leftside" 
             :orientation "v" 
             :space-evenly "false" 
-            :spacing "30"
             :halign "start"
             (fetch)
             (top)
@@ -39,7 +38,8 @@
     (box 
         :orientation "h" 
         :space-evenly "false" 
-        :spacing "30" 
+        :spacing "0"
+		:class "side_top"
         :halign "center"
     (date)
     (weather))
@@ -55,7 +55,7 @@
 		  :halign "center"
       :valign "start"
       :hexpand "true"
-      :width ""
+      :width "350px"
 	    (box 	
 	        :class "album_art" 
 		 	    :style "background-image: url('${art}');")
@@ -79,9 +79,9 @@
 			        :valign "center"
 			        :halign "center"
 			        :spacing 25
-			        (button :class "btn_prev" :onclick "scripts/music previous" "玲")
-			        (button :class "btn_play" :onclick "scripts/music toggle" playpause)
-			        (button :class "btn_next" :onclick "scripts/music next" "怜")))))
+			        (button :class "btn_prev" :onclick "scripts/music previous" "󰒮")
+			        (button :class "btn_play" :onclick "scripts/music toggle" "󰐊")
+			        (button :class "btn_next" :onclick "scripts/music next" "󰒭")))))
 
 
 ;; weather
@@ -89,17 +89,17 @@
 		(box 
 		    :class "weather"  
 		    :orientation "v" 
-		    :spacing -2 
 		    :space-evenly "false" 
-		    :vexpand "true" 
 		    :hexpand "false" 
+			:height 175
+			:width 130
 		    :valign "start" 
 		    :halign "center"
 			(label 
 			    :class "iconweather" 
 			    :halign "center" 
 			    :valign "center" 
-			    :style "color: ${HEX};" :text ICON)
+			    :style "color: ${HEX};" :text "${ICON}")
 			(button 
 			    :onclick "scripts/weather --getdata && eww reload &" 
 			    :class "label_temp" 
@@ -108,7 +108,14 @@
 			    "${TEMP}")))
 
 (defwidget date [] 
-	(box :class "date" :orientation "v" :valign "start" :space-evenly "false" :halign "center"
+	(box
+		:class "date"
+		:orientation "v"
+		:valign "start"
+		:space-evenly "false"
+		:halign "center"
+		:height 175
+		:width 130
 		(label 
 		:text DAY)
 		(label 
@@ -123,7 +130,7 @@
 	(box 
 	    :class "stats-box" 
 	    :space-evenly "false" 
-	    :width "300px"
+	    :width "350px"
 	    :orientation "v" 
 	    :valign "start" 
 	    :halign "center" 
@@ -135,14 +142,14 @@
 		    :space-evenly "false"
 			(label 
 			    :tooltip "CPU Usage: ${round(EWW_CPU.avg, 0)}%" 
-			    :class "stats-icon" :text "")
+			    :class "stats-icon" :text "󰻠")
 			(scale 
 			    :min 0 
 			    :max 101 
 			    :active false 
 			    :value {EWW_CPU.avg} 
 			    :class "scale" 
-			    :width 280))
+			    :width 330))
 		(box 
 		    :class "stats" 
 		    :hexpand "false" 
@@ -150,14 +157,14 @@
 		    :space-evenly "false"
 			(label 
 			    :tooltip "CPU Temp: ${round(tempc_percent, 0)}%" 
-			    :class "stats-icon" :text "")
+			    :class "stats-icon" :text "󰏈")
 			(scale 
 			    :min 40
 			    :max 90 
 			    :active false 
 			    :value tempc_percent 
 			    :class "scale" 
-			    :width 280))
+			    :width 330))
 		(box 
 		    :class "stats" 
 		    :hexpand "false" 
@@ -166,14 +173,14 @@
 			(label 
 			    :tooltip "Memory Used: ${round(EWW_RAM.used_mem_perc, 0)}%" 
 			    :class "stats-icon" 
-			    :text "﬙")
+			    :text "󰍛")
 			(scale 
 			    :min 0 
 			    :max 101 
 			    :active false 
 			    :value {EWW_RAM.used_mem_perc} 
 			    :class "scale" 
-			    :width 280))
+			    :width 330))
 		(box 
 		    :class "stats" 
 		    :hexpand "false" 
@@ -182,14 +189,14 @@
 			(label 
 			    :tooltip "Root Drive: ${round(EWW_DISK["/"].used_perc, 0)}% Full" 
 			    :class "stats-icon" 
-			    :text "")
+			    :text "")
 			(scale 
 			    :min 0 
 			    :max 101 
 			    :active false 
 			    :value {(EWW_DISK["/"].used / EWW_DISK["/"].total) * 100} 
 			    :class "scale" 
-			    :width 280))
+			    :width 330))
 		(box 
 		    :class "stats" 
 		    :hexpand "false" 
@@ -199,14 +206,14 @@
 			    :tooltip "Volume: ${volume_percent}%" 
 			    :onclick "amixer set Master toggle" 
 			    :onrightclick "alsamixer &" 
-			    :class "stats-icon" "墳")
+			    :class "stats-icon" "󰖀")
 			(scale 
 			    :min 0 
 			    :max 101 
 			    :active true 
 			    :value volume_percent
 			    :class "scale" 
-			    :width 280 
+			    :width 330 
 			    :onchange "amixer sset Master {}%")
 			)))
 
@@ -233,12 +240,12 @@
 	        :class "firmware" 
 	        :halign "center"  
 			:tooltip "Reboot to EFI" 
-	        :onclick "kitty systemctl reboot --firmware &" "拉")
+	        :onclick "kitty systemctl reboot --firmware &" "")
 	    (button 
 	        :class "exit" 
 	        :halign "center"  
 			:tooltip "Quit Hyprland" 
-	        :onclick "hyprctl dispatch exit exit" "")
+	        :onclick "hyprctl dispatch exit exit" "󰗼")
 	    (button 
 	        :class "restart" 
 	        :halign "center"  
@@ -251,7 +258,7 @@
                 :class "fetch"  
                 :orientation "v" 
                 :space-evenly "false" 
-                :halign "center"  
+                :halign "right"  
                 :valign "start" 
                 :spacing "10"
                 (label 
@@ -269,7 +276,7 @@
                 (label 
                     :class "packages" 
                     :halign "start"
-                    :text " : ${packages}")
+                    :text " : ${packages}")
                 (label 
                     :class "kernal" 
                     :halign "start"

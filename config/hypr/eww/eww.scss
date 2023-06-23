@@ -91,7 +91,7 @@ $white:     #E5E5E5;
     border-style: solid;
     border-width: 2;
     border-color: $green;
-    padding: 0px 30px 0px 50px;
+    padding: 0px 0px 0px 10px;
 }
 
 .center_modules {
@@ -146,7 +146,7 @@ tooltip label {
 }
 
 .notif_button {
-    font-size: 28;
+    font-size: 40;
     margin: 0px 20px 0px 0px;
     color: $white;
 }
@@ -180,7 +180,7 @@ tooltip label {
   border-radius: 10px;
 }
 .volume_icon {
-    font-size: 32;
+    font-size: 40;
     color: $blue;
   margin: 0px 10px 0px 0px;
 }
@@ -199,7 +199,7 @@ tooltip label {
 
 .iconlauncher {
     color: $green;
-    font-size: 36px;
+    font-size: 40px;
     margin: 0px 0px 0px 15px;
 }
 .iconsearch {
@@ -540,8 +540,9 @@ color: #bfc9db;
 .music-player {
 	all: unset;
   background-color: $widget-background;
-	padding: 0px 25px 0px 17px;
-  border-radius: 16px;
+	padding: 0px 17px 0px 17px;
+  margin: -1px 20px -1px 20px;
+  border-radius: 32px 32px 0px 0px;
   border-style: solid;
   border-width: 2;
   border-color: $red;
@@ -576,11 +577,16 @@ color: #bfc9db;
 	background-color: $blue;
 }
 
+.side_top {
+  margin: 20px 20px -1px 20px;
+}
+
 // weather
 .weather {
   all: unset;
   background-color: $widget-background;
-  border-radius: 16px;
+  margin-left: -1px;
+  border-radius: 0 16px 0 0;
   border-style: solid;
   border-width: 2;
   border-color: $red;
@@ -603,7 +609,7 @@ color: #bfc9db;
 .iconweather {
 	font-size : 44px;
 	font-weight : normal;
-	margin : 0px -5px  0px 20px;
+	margin : 0px 9px  0px 6px;
 }
 
 .label_temp {
@@ -632,7 +638,7 @@ color: #bfc9db;
     all: unset;
     background-color: $widget-background;
     padding: 33px 27px 27px 27px;
-  border-radius: 16px;
+  border-radius: 16px 0 0 0;
   border-style: solid;
   border-width: 2;
   border-color: $red;
@@ -640,13 +646,15 @@ color: #bfc9db;
 	font-size : 18px;
 	font-style : italic;
 	font-family: Cartograph CF;
+  margin-right: -1px;
 }
 
 .stats-box {
     all: unset;
     background-color: $widget-background;
+    margin: -1px 20px -1px 20px;
     padding: 20px 25px 20px 25px;
-  border-radius: 16px;
+  border-radius: 32px 32px 10px 10px ;
   border-style: solid;
   border-width: 2;
   border-color: $red;
@@ -681,17 +689,18 @@ scale trough {
 .buttons {
     opacity: 1;
     background-color: $widget-background;
-  border-radius: 16px;
+  border-radius: 0 0 20px 20px;
   border-style: solid;
   border-width: 2;
   border-color: $red;
+  margin-top: -1px;
     padding: 15px 0px 15px 0px;
     margin-bottom: 30px;
 }
 
 .poweroff, .reboot, .firmware, .exit, .restart {
   margin: 0px 16px 0px 16px;
-  padding: 2px 15px 2px 9px;
+  padding: 2px 9px 2px 9px;
   border-radius: 25px;
   font-size: 24px;
   color: $black;
@@ -714,12 +723,15 @@ scale trough {
 }
 
 .fetch {
+  font-size: 1.2rem;
     margin-top: 35px;
-    font-size: 15px;
-  border-radius: 16px;
+    margin-left: 30px;
+    margin-right: -2px;
+    // font-size: 15px;
+  border-radius: 16px 0 0 16px ;
   border-style: solid;
   border-width: 2;
-  border-color: $red;
+  border-color: $green;
     background-color: $widget-background;
     padding: 30px 55px 30px 55px;
 }
@@ -798,7 +810,7 @@ scale trough {
     margin: 0px 50px 0px 0px;
 }
 .notification-action {
-    font-size: 36px;
+    font-size: 80;
     color: $white;
     margin: 0px 0px 0px 20px;
 }
