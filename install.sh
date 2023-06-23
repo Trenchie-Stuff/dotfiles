@@ -16,6 +16,14 @@ for f in home/*; do
       if [[ -L $HOME/`basename $f` ]]; then
         rm $HOME/`basename $f`;
       fi;
+      if [[ -d $HOME/`basename $f` ]]; then
+        echo "Moving existing $HOME/`basename $f` to $HOME/`basename $f`_old";
+        mv $HOME/`basename $f` $HOME/`basename $f`_old;
+      fi;
+      if [[ -f $HOME/`basename $f` ]]; then
+        echo "Moving existing $HOME/`basename $f` to $HOME/`basename $f`_old";
+        mv $HOME/`basename $f` $HOME/`basename $f`_old;
+      fi;
       ln -sf `pwd`/$f $HOME/`basename $f`;;
     n|no) 
       echo "skipping...";;
@@ -40,6 +48,14 @@ for f in config/*; do
     all|a|y|yes)
       if [[ -L $HOME/.config/`basename $f` ]]; then
         rm $HOME/.config/`basename $f`;
+      fi;
+      if [[ -d $HOME/.config/`basename $f` ]]; then
+        echo "Moving existing $HOME/.config/`basename $f` to $HOME/.config/`basename $f`_old";
+        mv $HOME/.config/`basename $f` $HOME/.config/`basename $f`_old;
+      fi;
+      if [[ -f $HOME/.config/`basename $f` ]]; then
+        echo "Moving existing $HOME/.config/`basename $f` to $HOME/.config/`basename $f`_old";
+        mv $HOME/.config/`basename $f` $HOME/.config/`basename $f`_old;
       fi;
       ln -sf `pwd`/$f $HOME/.config/`basename $f`;;
     n|no) 
@@ -76,7 +92,7 @@ for p in $PACKAGES; do
   fi
   case $yn in
     all|a|y|yes)
-      yay -S $p;;
+      yay -S --noconfirm $p;;
     n|no|q|quit) 
       echo "skipping... $p";;
   esac
