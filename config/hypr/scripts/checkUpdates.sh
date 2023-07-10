@@ -32,12 +32,22 @@ update_daemon() {
       #notify-send -a '~/dotfiles' -i vcs-update-required "Update available."
     fi
 
+    git -C ~/dotfiles merge-base --is-ancestor HEAD origin/main
+
+    if [ $? -eq 0 ]; then
+      message="Up to date"
+    else
+      message="$message, but changes not pushed"
+      icon="vcs-locally-modified"
+      #notify-send -a '~/dotfiles' -i vcs-update-required "Update available."
+    fi
+
     if [ $hasChanges -ne 0 ]; then
       isNormal="false"
       if [ "$icon" != "vcs-normal" ]; then
         icon="vcs-conflicting"  
       else
-        icon="vcs-locally-modified"
+        icon="vcs-locally-modified-unstaged"
       fi;
       message="$message, but changes detected."
     else
