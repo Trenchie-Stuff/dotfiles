@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
-  
+loop="true"
+
+if [ "$1" = "once" ]; then  
+  loop="false"
+fi
 
 #if [ "$isNormal" = "false" ]; then
 #  notify-send -a '~/dotfiles' -i vcs-update-required "$message"
 #else
 #fi
 
-update_daemon() {
-    while :; do 
-
+runCheck() {
     git -C ~/dotfiles fetch
 
     touch ~/.cache/dotFilesUpdateChecked.touch
@@ -55,10 +57,17 @@ update_daemon() {
     fi
 
     notify-send -a '~/dotfiles' -i "$icon" "$message"
-  
-    sleep 3600;
-    
-  done;
+}
+
+update_daemon() {
+    if [ "$loop" = "true" ]; then
+      while :; do 
+        runCheck;
+        sleep 3600;
+      done;
+    else
+      runCheck
+    fi;
 }
 
 update_daemon
