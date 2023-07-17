@@ -34,3 +34,5 @@ fpath+=~/.zfunc
 export BW_SESSION="dlklt8L/o6KUgkQku5iDtzTZll1bALuT87PQf/6VIMBgiX8B/0yHdZPV5eVptuz8pAZgFgxO0wlmYiuBqMvLmw=="
 source /usr/share/nvm/init-nvm.sh
 nvm use default 1> /dev/null
+
+export HSA_OVERRIDE_GFX_VERSION=10.3.0

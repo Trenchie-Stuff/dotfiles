@@ -63,7 +63,7 @@ update_daemon() {
     if [ "$loop" = "true" ]; then
       while :; do 
         runCheck;
-        sleep 3600;
+        sleep 18000;
       done;
     else
       runCheck
