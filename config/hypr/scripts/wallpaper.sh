@@ -31,7 +31,7 @@ wptoggle () {
       [[ $laststate != "start" ]] && (sleep 5 && pkill -3 mpvpaper)
     elif [[ "$1" != "$laststate" ]]; then
       hyprctl keyword decoration:blur_new_optimizations 0
-      pgrep mpvpaper || (for monitor in "${monitors[@]}"; do mpvpaper -spf -n 300 -o '--ao=null --reset-on-next-file=loop --loop-playlist --shuffle --panscan=1 --hwdec=auto input-ipc-server=/tmp/mpv-socket' "$monitor" "$videos"; done)
+      pgrep mpvpaper || (for monitor in "${monitors[@]}"; do mpvpaper -spf -n 300 -o '--ao=null --speed=1 --reset-on-next-file=loop --loop-playlist --shuffle --panscan=1 --hwdec=auto input-ipc-server=/tmp/mpv-socket' "$monitor" "$videos"; done)
       [[ $laststate != "start" ]] && (sleep 5 && pkill -3 swaybg)
     fi
     
