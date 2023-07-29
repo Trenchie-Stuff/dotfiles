@@ -29,11 +29,11 @@ $white:     #E5E5E5;
     background-color: $panelBackground;
     padding-left: 0px;
     padding-right: 0px;
-    border-radius: 0px;
+    border-radius: 0px 0px 0px 10px;
     border-style: solid;
     border-top-width: 0;
     border-bottom-width: 2;
-    border-left-width: 0;
+    border-left-width: 2;
     border-right-width: 0;
     border-color: $green;
 }
