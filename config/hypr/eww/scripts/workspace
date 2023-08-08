@@ -2,7 +2,7 @@
 
 #define icons for workspaces 1-9
 #ic=(0     輸  " " " " )
-ic=(0   󰨞     )
+ic=(0   󰨞         󰣡 󰣥 󰣧 󰣤 󰣢 󰣣 󰣦 󰕞)
 
 export sp="a"
 
@@ -55,14 +55,22 @@ module() {
 #output eww widget
 echo 	"(eventbox :onscroll \"echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xargs hyprctl dispatch workspace\" \
           (box	:class \"works\"	:orientation \"v\" :spacing 5 :space-evenly \"false\" :valign \"center\"	\
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 1\'\" :onrightclick \"hyprctl dispatch workspace 1 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar $sp 0$sp$o1$sp$f1\" \"${ic[1]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 2\'\" :onrightclick \"hyprctl dispatch workspace 2 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o2$sp$f2\" \"${ic[2]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 3\'\" :onrightclick \"hyprctl dispatch workspace 3 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o3$sp$f3\" \"${ic[3]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 4\'\" :onrightclick \"hyprctl dispatch workspace 4 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o4$sp$f4\" \"${ic[4]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 5\'\" :onrightclick \"hyprctl dispatch workspace 5 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o5$sp$f5\" \"${ic[5]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 6\'\" :onrightclick \"hyprctl dispatch workspace 6 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o6$sp$f6\" \"${ic[6]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 7\'\" :onrightclick \"hyprctl dispatch workspace 7 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o7$sp$f7\" \"${ic[7]}\") \
-              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 8\'\" :onrightclick \"hyprctl dispatch workspace 8 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"0mar 0$sp$o8$sp$f8\" \"${ic[8]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 1\'\" :onrightclick \"hyprctl dispatch workspace 1 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o1$sp$f1\" \"${ic[1]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 2\'\" :onrightclick \"hyprctl dispatch workspace 2 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o2$sp$f2\" \"${ic[2]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 3\'\" :onrightclick \"hyprctl dispatch workspace 3 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o3$sp$f3\" \"${ic[3]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 4\'\" :onrightclick \"hyprctl dispatch workspace 4 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o4$sp$f4\" \"${ic[4]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 5\'\" :onrightclick \"hyprctl dispatch workspace 5 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o5$sp$f5\" \"${ic[5]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 6\'\" :onrightclick \"hyprctl dispatch workspace 6 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o6$sp$f6\" \"${ic[6]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 7\'\" :onrightclick \"hyprctl dispatch workspace 7 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o7$sp$f7\" \"${ic[7]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 8\'\" :onrightclick \"hyprctl dispatch workspace 8 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o8$sp$f8\" \"${ic[8]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 21\'\" :onrightclick \"hyprctl dispatch workspace 21 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o21$sp$f21\" \"${ic[9]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 22\'\" :onrightclick \"hyprctl dispatch workspace 22 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o22$sp$f22\" \"${ic[10]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 23\'\" :onrightclick \"hyprctl dispatch workspace 23 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o23$sp$f23\" \"${ic[11]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 24\'\" :onrightclick \"hyprctl dispatch workspace 24 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o24$sp$f24\" \"${ic[12]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 25\'\" :onrightclick \"hyprctl dispatch workspace 25 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o25$sp$f25\" \"${ic[13]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 26\'\" :onrightclick \"hyprctl dispatch workspace 26 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o26$sp$f26\" \"${ic[14]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 27\'\" :onrightclick \"hyprctl dispatch workspace 27 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o27$sp$f27\" \"${ic[15]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 28\'\" :onrightclick \"hyprctl dispatch workspace 28 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o28$sp$f28\" \"${ic[16]}\") \
           )\
         )" | tee ~/.ewwt
 }
