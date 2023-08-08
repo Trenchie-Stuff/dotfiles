@@ -36,7 +36,7 @@ runCheck() {
 
     git -C ~/dotfiles merge-base --is-ancestor HEAD origin/main
 
-    if [ $? -eq 0 ]; then
+    if [ $? -eq 0 ] && [ "$message" = "" ]; then
       message="Up to date"
     else
       message="$message, but changes not pushed"
