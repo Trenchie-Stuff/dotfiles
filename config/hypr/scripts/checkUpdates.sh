@@ -27,7 +27,7 @@ runCheck() {
     git -C ~/dotfiles merge-base --is-ancestor origin/main HEAD
 
     if [ $? -eq 0 ]; then
-      message="Up to date"
+      message=""
     else
       message="Update available"
       icon="vcs-update-required"
@@ -37,7 +37,7 @@ runCheck() {
     git -C ~/dotfiles merge-base --is-ancestor HEAD origin/main
 
     if [ $? -eq 0 ] && [ "$message" = "" ]; then
-      message="Up to date"
+      message=""
     else
       message="$message, but changes not pushed"
       icon="vcs-locally-modified"
@@ -51,7 +51,14 @@ runCheck() {
       else
         icon="vcs-locally-modified-unstaged"
       fi;
-      message="$message, but changes detected."
+      if [ "$message" = "" ]; then
+        message="Changes detected."
+      else
+        message="$message, but changes detected."
+      fi
+    fi
+    if [ "$message" = "" ]; then
+      message="No changes detected."
     else
       message="$message."
     fi
