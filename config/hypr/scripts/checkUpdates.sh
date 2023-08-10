@@ -63,7 +63,7 @@ runCheck() {
       message="$message."
     fi
 
-    notify-send -a '~/dotfiles' -i "$icon" "$message"
+    notify-send -a '~/dotfiles' -i "$icon" "$message" -u low
 }
 
 update_daemon() {

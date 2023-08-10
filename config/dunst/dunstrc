@@ -2,7 +2,9 @@
     ### Display ###
 
     # Which monitor should the notifications be displayed on.
-    monitor = 0
+    # monitor = 0
+
+    expand_right = true
 
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
@@ -32,8 +34,8 @@
     #geometry = "300x5-100+100"
     width = (300, 600)
     height = (200, 500)
-    offset = +5x+50
-    origin = top-right
+    offset = +2x+2
+    origin = top-left
 
     # Turn on the progess bar
     progress_bar = true
@@ -335,21 +337,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#00000066"
-    foreground = "#888888"
+    background = "#003300AA"
+    foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#00000066"
+    background = "#202000AA"
     foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#00000066"
+    background = "#66000088"
     foreground = "#ffffff"
     frame_color = "#ff0000"
     timeout = 0
