@@ -119,11 +119,13 @@ fi
 
 if [[ $yayInstalled -eq 0 ]]; then
   declare -a PACKAGES=(
+    bc
+    rofi-bluetooth
     tmux
     rustup
     scdoc 
     nerd-fonts-inter
-    nerd-fonts-meta
+#    nerd-fonts-meta
     hyprland-git
     eww-wayland
     fuzzel
@@ -142,7 +144,7 @@ if [[ $yayInstalled -eq 0 ]]; then
     swaylock-effects-git
     swayidle
     zsh
-    code-translucent
+#    code-translucent
     visual-studio-code-bin
     )
   instChoices=();
@@ -217,6 +219,8 @@ for i in ${!DIRECTORIES[@]}; do
   fi
   echo "  ✅ $p ";
 done;
+
+sudo sed -iE 's/^#Experimental = .*$/Experimental = true/' /etc/bluetooth/main.conf
 
 echo "Log out and log back in. Run 'Hyprland' to start UI."
 

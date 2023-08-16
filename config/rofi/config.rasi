@@ -28,10 +28,10 @@ window {
     text-color: @foreground;
     border: #00000000;
     border-radius: 16px;
-    location: center;
-    anchor: center;
-    x-offset: 400;
-//    y-offset: 66;
+    location: north;
+    anchor: north;
+//    x-offset: 400;
+//    y-offset: 166px;
     height: 800px;
     width: 800px;
 //    orientation: vertical;

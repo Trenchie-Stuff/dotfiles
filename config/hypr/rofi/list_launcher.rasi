@@ -25,15 +25,15 @@ configuration {
 #window {
     background-color:               @background-color;
     text-color:                     @foreground;
-	border:							0;
-	border-color:					@background-color;
+    border:							0;
+    border-color:					@background-color;
     border-radius:                  8;
-    height:             70%;
-	width:							500px;
-    location:                       SouthWest;
-    anchor:                         SouthWest;
+    height:                         50%;
+    width:							500px;
+    location:                       NorthWest;
+    anchor:                         NorthWest;
     x-offset:                       40px;
-    y-offset:                       -40px;
+    y-offset:                       40px;
 }
 
 #prompt {

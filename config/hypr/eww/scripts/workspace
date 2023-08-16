@@ -2,7 +2,7 @@
 
 #define icons for workspaces 1-9
 #ic=(0     輸  " " " " )
-ic=(0   󰨞         󰣡 󰣥 󰣧 󰣤 󰣢 󰣣 󰣦 󰕞)
+ic=(0   󰨞         󰣡 󰣥 󰣧 󰣤 󰣢 󰣣 󰣦 󰕞)
 
 export sp="a"
 

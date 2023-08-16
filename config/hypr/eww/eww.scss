@@ -6,7 +6,7 @@ Created by saimoom **/
 	font-family: MesloLGS Nerd Font Mono;
 }
 
-$panelBackground: rgba(00, 00, 00, 0.9);
+$panelBackground: rgba(00, 00, 00, 0.6);
 $background: rgba(00, 00, 00, 0.3);
 $widget-background: rgba(30, 30, 30, 0.4);
 $shadow:    rgba(00, 00, 00, 0.4);
@@ -63,7 +63,7 @@ $white:     #E5E5E5;
 }
 
 .vert_modules {
-  background-color: rgba(00, 00, 00, 0.9);
+  background-color: rgba(00, 00, 00, 0.6);
   border-radius: 0px;
   border-style: solid;
   border-top-width: 2;
@@ -76,7 +76,7 @@ $white:     #E5E5E5;
 .vert_modules2 {
   opacity: 0.3;
   font-size: 0.5rem;
-  background-color: rgba(00, 00, 00, 0.9);
+  background-color: rgba(00, 00, 00, 0.6);
   border-radius: 0px;
   border-style: solid;
   border-top-width: 2;
@@ -637,7 +637,7 @@ color: #bfc9db;
 	color : $blue;
 	font-size : 32px;
 	font-weight : bold;
-	margin : 0px 0px 0px 5px;
+	margin : 0px 0px 0px 0px;
 
 }
 

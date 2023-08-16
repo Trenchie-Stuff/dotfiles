@@ -37,6 +37,8 @@
 (defpoll calendar_day :interval "1h" "date '+%d'")
 (defpoll calendar_year :interval "1h" "date '+%Y'")
 (defpoll volume_percent :interval "1s"  "scripts/sbvol --get")
+(defpoll bluetooth :interval "1s" "rofi-bluetooth --short_status")
+(defpoll bluetooth_full :interval "1s" "rofi-bluetooth --status")
 (defpoll temp1_percent :interval "1s" "scripts/temp1")
 (defpoll temp2_percent :interval "1s" "scripts/temp2")
 
@@ -49,6 +51,8 @@
 (deflisten appname "scripts/appname")
 
 (defvar vol_reveal false)
+(defvar blu_reveal false)
+(defvar blu_main true)
 (defvar br_reveal false)
 (defvar music_reveal false)
 (defvar control_reveal false)
@@ -131,6 +135,30 @@
 	            :onclick "${EWW_CMD} open --toggle audio_ctl"
 	            :class "volume_icon"
 	            "󰕾"))))
+(defwidget blueW []
+  (eventbox 
+    :onhover "${EWW_CMD} update blu_reveal=true; ${EWW_CMD} update blu_main=false;"
+	:onhoverlost "${EWW_CMD} update blu_reveal=false; ${EWW_CMD} update blu_main=true;"
+    (box
+        :class "module-2"
+        :space-evenly "false"
+        :orientation "h"
+        :spacing "3" 
+	        (revealer 
+	            :transition "slideright"
+			    :reveal blu_reveal
+			    :duration "350ms"
+                  (label 
+			        :class "headerWTemp" 
+                    :text "${bluetooth_full}"))
+	        (revealer 
+	            :transition "slideleft"
+			    :reveal blu_main
+			    :duration "350ms"
+                  (label 
+			        :class "headerWTemp" 
+                    :text "${bluetooth}"))
+                )))
 
 (defwidget weat []
     (box :vexpand "false" :hexpand "false" :orientation "h"
@@ -350,6 +378,9 @@
     (mem)
     (tempc)
     (wtemp)
+    (weat)
+    (sep)
+    (blueW)
     (sep)
     (clock_module)
     (sep)
@@ -367,8 +398,10 @@
     (temp1)
     (temp2)
     (sep)
-    (weat)
     (wtemp)
+    (weat)
+    (sep)
+    (blueW)
     (sep)
     (clock_module)
     (sep)
