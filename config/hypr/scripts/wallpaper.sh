@@ -23,7 +23,7 @@ pgrep wallpaper | grep -wv $$ | xargs kill -3 2&> /dev/null || true
 wptoggle () {
     #Identify active monitors
     monitors=($(hyprctl monitors | awk '{if ($1 ~ "Monitor") print $2}'))
-
+    echo $monitors
     #Run appropriate  command based on charging state.
     if [[ "$1" == "Discharging" ]] && [[ "$1" != "$laststate" ]]; then
       hyprctl keyword decoration:blur_new_optimizations 1

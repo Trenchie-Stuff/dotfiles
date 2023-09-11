@@ -13,7 +13,7 @@ configuration {
     font: "Inter Nerd Font Semibold 11";
     foreground:                 #ffffff;
     foreground-alt:             #c0c0c0;
-    background-color:           #00000066;
+    background-color:           #00330066;
     selected-foreground:        #f7d8c8;
     selected-background:        #000000ff;
     separatorcolor:             #7c7c7c43;

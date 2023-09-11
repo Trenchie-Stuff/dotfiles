@@ -1,4 +1,6 @@
 #!/bin/sh
+exit 0
+
 BOT=`wlr-randr | grep '^[^ ]' | grep V3L6W | sed 's/ .*//'`
 TOP=`wlr-randr | grep '^[^ ]' | grep E27u | sed 's/ .*//'`
 
