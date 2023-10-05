@@ -31,7 +31,7 @@ window {
     location: north;
     anchor: north;
 //    x-offset: 400;
-//    y-offset: 166px;
+    y-offset: 166px;
     height: 800px;
     width: 800px;
 //    orientation: vertical;

@@ -26,7 +26,7 @@ fi
 #if [[ -n $SSH_CONNECTION ]]; then
 #  export TERM="screen"
 #fi
-alias ll="ls -lA"
+#alias ll="ls -lA"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -36,3 +36,6 @@ source /usr/share/nvm/init-nvm.sh
 nvm use default 1> /dev/null
 
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
+
+alias ls='eza --icons -abo --group-directories-first --git --no-permissions --color-scale --color always -lh'
+alias less='less -r'

@@ -1,0 +1,21 @@
+#corner_radius 10
+
+default_dim_inactive 0.05
+
+gaps top 15
+#gaps inner 2
+
+#shadows on
+#shadow_blur_radius 20
+#shadows_on_csd on
+#shadow_color #00334487
+
+default_border pixel 4
+default_floating_border pixel 8
+
+font pango:MesloLGS Nerd Font Mono 10
+
+
+client.focused #2073a2ff #2073a2ff #ffffffff
+client.focused_inactive #4093a244 #4093a244 #ffffffff
+client.unfocused #000000ff #000000aa #ffffffff

@@ -25,15 +25,15 @@ wptoggle () {
     monitors=($(hyprctl monitors | awk '{if ($1 ~ "Monitor") print $2}'))
     echo $monitors
     #Run appropriate  command based on charging state.
-    if [[ "$1" == "Discharging" ]] && [[ "$1" != "$laststate" ]]; then
+#    if [[ "$1" == "Discharging" ]] && [[ "$1" != "$laststate" ]]; then
       hyprctl keyword decoration:blur_new_optimizations 1
       pgrep swaybg || (for monitor in "${monitors[@]}"; do hyprctl dispatch exec "swaybg -m fill -o '$monitor' -i '$(randstill)'"; done)
       [[ $laststate != "start" ]] && (sleep 5 && pkill -3 mpvpaper)
-    elif [[ "$1" != "$laststate" ]]; then
-      hyprctl keyword decoration:blur_new_optimizations 0
-      pgrep mpvpaper || (for monitor in "${monitors[@]}"; do mpvpaper -spf -n 300 -o '--ao=null --speed=0.5 --reset-on-next-file=loop --loop-playlist --shuffle --panscan=1 --hwdec=auto input-ipc-server=/tmp/mpv-socket' "$monitor" "$videos"; done)
-      [[ $laststate != "start" ]] && (sleep 5 && pkill -3 swaybg)
-    fi
+#    elif [[ "$1" != "$laststate" ]]; then
+#      hyprctl keyword decoration:blur_new_optimizations 0
+#      pgrep mpvpaper || (for monitor in "${monitors[@]}"; do mpvpaper -spf -n 300 -o '--ao=null --speed=1 --reset-on-next-file=loop --loop-playlist --shuffle --panscan=1 --hwdec=auto input-ipc-server=/tmp/mpv-socket' "$monitor" "$videos"; done)
+#      [[ $laststate != "start" ]] && (sleep 5 && pkill -3 swaybg)
+#    fi
     
     export wpid=($(pgrep mpvpaper || pgrep swaybg))
 

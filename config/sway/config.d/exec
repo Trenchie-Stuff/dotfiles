@@ -1,0 +1,16 @@
+set $wallpaper mpvpaper '*' ~/Wallpapers/active.mp4
+
+
+### Idle configuration
+#
+# Example configuration:
+#
+exec swayidle -w \
+         timeout 600 'killall -9 mpvpaper; sleep 5; systemctl suspend' \
+         after-resume "sleep 20; $wallpaper"
+         
+exec wl-clipboard-history -t
+
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg ~/Wallpapers/acidaic.png fill
+exec $wallpaper

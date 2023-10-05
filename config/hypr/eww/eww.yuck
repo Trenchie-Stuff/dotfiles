@@ -37,7 +37,7 @@
 (defpoll calendar_day :interval "1h" "date '+%d'")
 (defpoll calendar_year :interval "1h" "date '+%Y'")
 (defpoll volume_percent :interval "1s"  "scripts/sbvol --get")
-(defpoll bluetooth :interval "1s" "rofi-bluetooth --short_status")
+(defpoll bluetooth :interval "1s" "rofi-bluetooth --status")
 (defpoll bluetooth_full :interval "1s" "rofi-bluetooth --status")
 (defpoll temp1_percent :interval "1s" "scripts/temp1")
 (defpoll temp2_percent :interval "1s" "scripts/temp2")
@@ -74,11 +74,11 @@
 
 (defwidget workspaces []
   (literal 
-    :content workspace))
+    :content workspace2))
 
 (defwidget workspaces2 []
   (literal 
-    :content workspace2))
+    :content workspace))
 
 (defwidget appnames []
   (eventbox
@@ -441,7 +441,7 @@
 
 (defwindow bar0
     :exclusive false
-    :monitor 1
+    :monitor 0
     :geometry (geometry 
         :x "0px"
         :y "0px"
@@ -454,7 +454,7 @@
     
 (defwindow bar1
     :exclusive false
-    :monitor 0
+    :monitor 1
     :geometry (geometry 
         :x "0px"
         :y "0px"
@@ -463,12 +463,12 @@
         :anchor "top right")
     :stacking "fg"
     :windowtype "dock"
-    (bar_layout2))
+    (bar_layout1))
 
 
 (defwindow bar2
     :exclusive false
-    :monitor 1
+    :monitor 0
     :geometry (geometry 
         :x "-4px"
         :y "-2px"
@@ -481,7 +481,7 @@
 
 (defwindow bar3
     :exclusive false
-    :monitor 0
+    :monitor 1
     :geometry (geometry 
         :x "-4px"
         :y "-2px"
