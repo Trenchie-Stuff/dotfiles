@@ -2,9 +2,28 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-bindsym $mod+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh down
-bindsym $mod+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh up
-bindsym $mod+Shift+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh fall
-bindsym $mod+Shift+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh jump
-bindsym $mod+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 0
-bindsym $mod+Shift+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 100
+bindsym $mod+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh down all manual
+bindsym $mod+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh up all manual
+bindsym $mod+Shift+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh bottom all manual
+bindsym $mod+Shift+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh top all manual
+bindsym $mod+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 0 all manual
+bindsym $mod+Shift+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 100 all manual
+
+bindsym $mod+Alt+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh down 0xa manual
+bindsym $mod+Alt+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh up 0xa manual
+bindsym $mod+Alt+Shift+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh bottom 0xa manual
+bindsym $mod+Alt+Shift+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh top 0xa manual
+bindsym $mod+Alt+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 0 0xa manual
+bindsym $mod+Alt+Shift+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 100 0xa manual
+
+bindsym $mod+Ctrl+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh down 0xb manual
+bindsym $mod+Ctrl+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh up 0xb manual
+bindsym $mod+Ctrl+Shift+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh bottom 0xb manual
+bindsym $mod+Ctrl+Shift+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh top 0xb manual
+bindsym $mod+Ctrl+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 0 0xb manual
+bindsym $mod+Ctrl+Shift+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 100 0xb manual
+
+
+bindsym XF86Calculator exec gnome-calculator
+
+bindsym $mod+Ctrl+Shift+L exec sudo systemctl suspend

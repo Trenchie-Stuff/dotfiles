@@ -20,7 +20,7 @@ bindsym $mod+Shift+v exec wl-clipboard-history -p "$(wl-clipboard-history -l 20 
 # mouse button for dragging.
 floating_modifier $mod normal
 
-bindsym $mod+Ctrl+Shift+S exec grimblast save screen $(xdg-user-dir PICTURES)/Screenshots/$(date +'%Y%m%d%H%M%S_1.png')
-bindsym $mod+Ctrl+s exec grimblast --notify save area $(xdg-user-dir PICTURES)/Screenshots/$(date +'%Y%m%d%H%M%S_1.png')
-bindsym $mod+Shift+s exec grimblast --notify copy area
-bindsym $mod+Alt+s exec grimblast --notify copy window
+bindsym $mod+Ctrl+Shift+S exec grimshot save screen $(xdg-user-dir PICTURES)/Screenshots/$(date +'%Y%m%d%H%M%S_1.png')
+bindsym $mod+Ctrl+s exec grimshot --notify save area $(xdg-user-dir PICTURES)/Screenshots/$(date +'%Y%m%d%H%M%S_1.png')
+bindsym $mod+Shift+s exec grimshot --notify copy area
+bindsym $mod+Alt+s exec grimshot --notify copy window

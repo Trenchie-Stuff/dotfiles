@@ -1,16 +1,182 @@
 set $wallpaper mpvpaper '*' ~/Wallpapers/active.mp4
 
+exec_always 'swaymsg "set \$currentBrightness $(~/.config/sway/scripts/brightness.sh)"'
+
+exec_always ~/.config/sway/scripts/brightness.sh $currentBrightness all auto
 
 ### Idle configuration
 #
 # Example configuration:
 #
-exec swayidle -w \
-         timeout 600 'killall -9 mpvpaper; sleep 5; systemctl suspend' \
-         after-resume "sleep 20; $wallpaper"
+exec_always killall -9 swayidle; swayidle -w \
+    timeout 120 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 122 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 123 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 124 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 125 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 130 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 132 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 133 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 134 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 135 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 140 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 142 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 143 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 144 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 145 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 150 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 152 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 153 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 154 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 155 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 160 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 162 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 163 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 164 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 165 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 170 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 172 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 173 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 174 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 175 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 180 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 182 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 183 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 184 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 185 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 190 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 192 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 193 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 194 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 195 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 200 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 202 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 203 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 204 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 205 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 210 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 212 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 213 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 214 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 215 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
+    timeout 3600 'systemctl suspend'
+    
+bindsym $mod+Ctrl+Alt+XF86AudioRaiseVolume exec swaynag -m "brightness: $currentBrightness"
          
+# timeout 30 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+
 exec wl-clipboard-history -t
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg ~/Wallpapers/acidaic.png fill
-exec $wallpaper
+exec_always "killall -9 mpvpaper; mpvpaper '*' ~/Wallpapers/active.mp4"
+
+# 6
+# 6
+# 6
+# 6
+# 6
+# 6
+# 6
+# 6
+# 6
+# 6
+# 7
+# 7
+# 7
+# 7
+# 7
+# 7
+# 7
+# 7
+# 7
+# 7
+# 8
+# 8
+# 8
+# 8
+# 8
+# 8
+# 8
+# 8
+# 8
+# 8
+# 9
+# 9
+# 9
+# 9
+# 9
+# 9
+# 9
+# 9
+# 9
+# 9
+# 10
+# 10
+# 10
+# 10
+# 10
+# 10
+# 10
+# 10
+# 10
+# 10
+
+
+
+
+
+# timeout 10 '~/.config/sway/scripts/brightness.sh 98 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 11 '~/.config/sway/scripts/brightness.sh 96 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 12 '~/.config/sway/scripts/brightness.sh 94 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 13 '~/.config/sway/scripts/brightness.sh 92 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 14 '~/.config/sway/scripts/brightness.sh 90 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 15 '~/.config/sway/scripts/brightness.sh 88 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 16 '~/.config/sway/scripts/brightness.sh 86 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 17 '~/.config/sway/scripts/brightness.sh 84 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 18 '~/.config/sway/scripts/brightness.sh 82 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 19 '~/.config/sway/scripts/brightness.sh 80 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 20 '~/.config/sway/scripts/brightness.sh 78 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 21 '~/.config/sway/scripts/brightness.sh 76 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 22 '~/.config/sway/scripts/brightness.sh 74 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 23 '~/.config/sway/scripts/brightness.sh 72 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 24 '~/.config/sway/scripts/brightness.sh 70 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 25 '~/.config/sway/scripts/brightness.sh 68 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 26 '~/.config/sway/scripts/brightness.sh 66 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 27 '~/.config/sway/scripts/brightness.sh 64 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 28 '~/.config/sway/scripts/brightness.sh 62 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 29 '~/.config/sway/scripts/brightness.sh 60 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 30 '~/.config/sway/scripts/brightness.sh 58 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 31 '~/.config/sway/scripts/brightness.sh 56 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 32 '~/.config/sway/scripts/brightness.sh 54 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 33 '~/.config/sway/scripts/brightness.sh 52 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 34 '~/.config/sway/scripts/brightness.sh 50 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 35 '~/.config/sway/scripts/brightness.sh 48 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 36 '~/.config/sway/scripts/brightness.sh 46 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 37 '~/.config/sway/scripts/brightness.sh 44 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 38 '~/.config/sway/scripts/brightness.sh 42 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 39 '~/.config/sway/scripts/brightness.sh 40 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 40 '~/.config/sway/scripts/brightness.sh 38 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 41 '~/.config/sway/scripts/brightness.sh 36 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 42 '~/.config/sway/scripts/brightness.sh 34 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 43 '~/.config/sway/scripts/brightness.sh 32 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 44 '~/.config/sway/scripts/brightness.sh 30 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 45 '~/.config/sway/scripts/brightness.sh 28 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 46 '~/.config/sway/scripts/brightness.sh 26 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 47 '~/.config/sway/scripts/brightness.sh 24 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 48 '~/.config/sway/scripts/brightness.sh 22 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 49 '~/.config/sway/scripts/brightness.sh 20 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 50 '~/.config/sway/scripts/brightness.sh 18 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 51 '~/.config/sway/scripts/brightness.sh 16 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 52 '~/.config/sway/scripts/brightness.sh 14 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 53 '~/.config/sway/scripts/brightness.sh 12 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 54 '~/.config/sway/scripts/brightness.sh 10 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 55 '~/.config/sway/scripts/brightness.sh 8 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 56 '~/.config/sway/scripts/brightness.sh 6 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 57 '~/.config/sway/scripts/brightness.sh 4 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 58 '~/.config/sway/scripts/brightness.sh 2 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
+# timeout 59 '~/.config/sway/scripts/brightness.sh 0 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" 
+
+exec XDG_CURRENT_DESKTOP=sway /usr/lib/xdg-desktop-portal -r & /usr/lib/xdg-desktop-portal-wlr
+
+exec foot --server

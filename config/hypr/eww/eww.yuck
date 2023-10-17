@@ -441,7 +441,7 @@
 
 (defwindow bar0
     :exclusive false
-    :monitor 0
+    :monitor 1
     :geometry (geometry 
         :x "0px"
         :y "0px"
@@ -454,7 +454,7 @@
     
 (defwindow bar1
     :exclusive false
-    :monitor 1
+    :monitor 0
     :geometry (geometry 
         :x "0px"
         :y "0px"
@@ -468,7 +468,7 @@
 
 (defwindow bar2
     :exclusive false
-    :monitor 0
+    :monitor 1
     :geometry (geometry 
         :x "-4px"
         :y "-2px"
@@ -481,7 +481,7 @@
 
 (defwindow bar3
     :exclusive false
-    :monitor 1
+    :monitor 0
     :geometry (geometry 
         :x "-4px"
         :y "-2px"
@@ -495,7 +495,7 @@
 
 (defwindow bar5
     :exclusive false
-    :monitor 0
+    :monitor 1
     :geometry (geometry 
         :x "-4px"
         :y "0px"
@@ -508,7 +508,7 @@
     
 (defwindow bar4
     :exclusive false
-    :monitor 1
+    :monitor 0
     :geometry (geometry 
         :x "-4px"
         :y "0px"
@@ -598,7 +598,7 @@
     :stacking "fg"
     :focusable "false"
     :screen 1
-    :monitor 0
+    :monitor 1
 	:geometry (geometry 
         :x "20" 
 		:y "7%" 
@@ -664,7 +664,7 @@
     :stacking "fg"
     :focusable "false"
     :screen 1
-    :monitor 0
+    :monitor 1
 	:geometry (geometry
             :x "20" 
 			:y "7%" 
@@ -689,7 +689,7 @@
     :stacking "fg"
     :focusable "false"
     :screen 1
-    :monitor 0
+    :monitor 1
 	:geometry (geometry
         :x "20" 
 	    :y "7%" 

@@ -10,16 +10,16 @@ if [[ ! $(pidof eww) ]]; then
 fi
 
 ## Open widgets
-${EWW} open-many sidebar notifications
-${EWW} open bar0
-${EWW} open bar1
-${EWW} open bar2
-${EWW} open bar3
+#${EWW} open-many sidebar notifications
+# ${EWW} open bar0
+# ${EWW} open bar1
+# ${EWW} open bar2
+# ${EWW} open bar3
 # ${EWW} open bar4
 # ${EWW} open bar5
 
-NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
-for i in "${!NB_MONITORS[@]}"; do
-    ${EWW} open bar$i
-    [[ $i == 0 ]] && ${EWW} open-many sidebar notifications
-done
+#NB_MONITORS=($(hyprctl monitors -j | jq -r '.[] | .id'))
+#for i in "${!NB_MONITORS[@]}"; do
+#    ${EWW} open bar$i
+#    [[ $i == 0 ]] && ${EWW} open-many sidebar notifications
+#done

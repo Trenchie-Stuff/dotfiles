@@ -6,6 +6,7 @@
     "modules-left": [
         "custom/launcher",
         "sway/workspaces",
+        "hyprland/workspaces",
         "custom/stub",
         "sway/mode",
         "sway/window"
@@ -53,6 +54,48 @@
                 "16": "-6",
                 "17": "-7",
                 "18": "-8",
+            }
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "persistent_workspaces": {
+        },
+        "format-icons": {
+                "1": "+1",
+                "2": "+2",
+                "3": "+3",
+                "4": "+4",
+                "5": "+5",
+                "6": "+6",
+                "7": "+7",
+                "8": "+8",
+                "9": "-1",
+                "10": "-2",
+                "11": "-3",
+                "12": "-4",
+                "13": "-5",
+                "14": "-6",
+                "15": "-7",
+                "16": "-8",
+                "21": "*1",
+                "22": "*2",
+                "23": "*3",
+                "24": "*4",
+                "25": "*5",
+                "26": "*6",
+                "27": "*7",
+                "28": "*8",
+                "29": "/1",
+                "30": "/2",
+                "31": "/3",
+                "32": "/4",
+                "33": "/5",
+                "34": "/6",
+                "35": "/7",
+                "36": "/8",
             }
     },
 
@@ -190,9 +233,9 @@
    "custom/pacman": {
         "format": " {}",
         "interval": 7200,                     // every two hours
-        "exec": "checkupdates | wc -l",       // # of updates
+        "exec": "yay -Sy > /dev/null; yay -Qu | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "alacritty -e sudo pacman -Syu ; pkill -SIGRTMIN+8 waybar", // update system
+        "on-click": "foot -e yay -Syu ; pkill -SIGRTMIN+8 waybar", // update system
         "signal": 8
     },
 

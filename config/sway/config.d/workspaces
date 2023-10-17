@@ -2,11 +2,16 @@
 set $pDisplay "ASR PG34WQ15R2B 0x00000133"
 set $sDisplay "HP Inc. HP E27u G4 CN424204BW"
 
-#mouse_warping container
-focus_follows_mouse no
+mouse_warping container
+focus_follows_mouse yes
 
-output $pDisplay resolution 3440x1440@165Hz position 0,1120
-output $sDisplay resolution 2560x1440 position 3440,0 transform 90
+output $pDisplay adaptive_sync on
+
+#output $pDisplay resolution 2560x1440@165Hz position 0,1120
+#output $sDisplay resolution 2560x1440 position 2560,0 transform 90
+
+output $pDisplay resolution 3440x1440@165Hz position 0,0
+output $sDisplay resolution 2560x1440 position 3440,0
 
 workspace "1" output $pDisplay
 workspace "2" output $pDisplay
@@ -63,3 +68,4 @@ bindsym $mod+Alt+Shift+5 move container to workspace "15"
 bindsym $mod+Alt+Shift+6 move container to workspace "16"
 bindsym $mod+Alt+Shift+7 move container to workspace "17"
 bindsym $mod+Alt+Shift+8 move container to workspace "18"
+

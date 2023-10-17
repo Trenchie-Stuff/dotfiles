@@ -1,1 +1,1 @@
-/home/trenchie/.config/hypr/scripts/fixMonitors2.sh
+/home/trenchie/.config/hypr/scripts/fixMonitors1.sh
