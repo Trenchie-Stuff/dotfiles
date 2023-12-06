@@ -5,7 +5,7 @@ module() {
     if [[ $? = 0 ]]; then
             if [[ $NBRT != $BRT ]]; then
                 BRT=$(echo "$NBRT" | awk '{print $4}')
-                echo "$BRT"
+                echo "󰃞 $BRT"
             fi
         return 0
     else

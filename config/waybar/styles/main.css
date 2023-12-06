@@ -1,0 +1,213 @@
+
+
+@import '../../colors.css';
+@import 'bar_30_left_margin.css';
+@import 'bar_20_left_main.css';
+@import 'taskbar.css';
+@import 'workspaces.css';
+
+/* General */
+
+*
+{
+  color: @font;
+  border: none;
+  border-radius: 0;
+  padding: 0 0;
+  font-family: "Antonio";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+window#waybar
+{
+  background: transparent;
+  transition-property: background-color;
+  transition-duration: .5s;
+  padding-bottom: 2px;
+}
+
+tooltip
+{
+  background: rgba(43, 48, 59, 0.95);
+  border: 1px solid rgba(100, 114, 125, 0.8);
+  border-radius: 7px;
+  border-color: shade(alpha(@borders, 0.9), 2.25);
+}
+
+button:hover
+{
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+
+#mode
+{
+  color: @font;
+}
+
+#clock
+{
+  background: @bg;
+  min-width: 230px;
+}
+
+
+#cpu, #memory
+{
+  margin-bottom: 4px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#clock, #custom-lyrics, #custom-pad_left, #custom-title, #custom-artist, #custom-power, #battery, #idle_inhibitor, #temperature, #custom-keyboard-layout, #backlight, #network, #pulseaudio, #mode, #custom-yay, #custom-backlight, #window, #tray, #custom-launcher, #custom-ddate, #custom-rightend, #custom-right_leftend, #custom-center_leftend
+{
+  margin-right: 2px;
+  margin-left: 2px;
+  margin-bottom: 0px;
+  border-radius: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#temperature {
+    min-width: 55px;
+}
+
+#custom-artist, #custom-pad_left {
+  background: @bg;
+}
+
+#custom-power, #battery, #temperature, #custom-keyboard-layout, #backlight, #mode, #custom-ddate
+{
+  background: @lcars9;
+}
+#custom-title {
+    background: @lcars3;
+}
+#custom-lyrics {
+    background: @lcars6;
+}
+
+#network, #cpu, #memory, #custom-right_leftend, #custom-center_leftend, #custom-rightend
+{
+  background: @lcars7;
+}
+
+#custom-center_leftend, #custom-right_leftend
+{
+  border-radius: 20px 0 0 20px;
+}
+
+#custom-rightend
+{
+  border-radius: 0 20px 20px 0;
+}
+
+.left #cpu,.left #memory
+{
+  margin-left: 5px;
+  margin-right: 0px;
+}
+
+.modules-left #custom-right_leftend, 
+.modules-left #custom-center_leftend, 
+.modules-left #custom-rightend
+{
+  background: @lcars7;
+}
+
+.modules-center #custom-right_leftend,
+.modules-center #custom-center_leftend,
+.modules-center #custom-rightend
+{
+  background: @lcars9;
+}
+
+#custom-yay
+{
+  background: @lcars8;
+}
+
+#pulseaudio, #custom-backlight, #idle_inhibitor
+{
+  background: @bg;
+}
+
+#idle_inhibitor.activated
+{
+  background: @lcars8;
+  color: @lcars10;
+}
+
+#window
+{
+  color: @font;
+  background: @bg;
+}
+
+#custom-launcher
+{
+  background: @lcars9;
+}
+
+#custom-arrowL0,#custom-arrowR0
+{
+  background: @bg;
+  color: @accent;
+}
+
+#mode
+{
+  margin-bottom: 0px;
+}
+
+#pulseaudio, #custom-backlight
+{
+    min-width: 50px;
+}
+#pulseaudio.muted
+{
+  background: @bg-light;
+}
+
+#temperature.critical
+{
+  background: @lcars8;
+}
+
+#network.disabled
+{
+  color: @lcars8;
+}
+
+.modules-left
+{
+  margin-left: -2px;
+}
+
+.modules-right
+{
+  margin-right: -2px;
+}
+
+#mode
+{
+  color: @font;
+}
+
+@keyframes blink
+{
+  to
+  {
+    background: @lcars8;
+  }
+}
+
+#tray
+{
+  background: @lcars3;
+  color: @lcars8;
+}
+

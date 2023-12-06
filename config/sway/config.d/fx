@@ -1,21 +1,44 @@
-corner_radius 5
 
-#default_dim_inactive 0.5
+corner_radius 16
+smart_corner_radius disable
 
-gaps top 15
-#gaps inner 10
+#default_dim_inactive 0.0
+#dim_inactive_colors.urgent #80000080
+#dim_inactive_colors.unfocused #808080ff
 
+#gaps top 10
+gaps outer 10
+gaps inner 0
+smart_gaps off
+smart_borders on
 #shadows on
 #shadow_blur_radius 20
 #shadows_on_csd on
-#shadow_color #00334487
+#shadow_color #ff0000ff
+#shadow_inactive_color #00000000
 
-default_border pixel 1
-default_floating_border pixel 2
+default_border pixel 2
 
-font pango:MesloLGS Nerd Font Mono 12
+default_floating_border pixel 3
 
-client.focused #2063f2ff #2063f2ff #ffffffff
+font pango:MesloLGS Nerd Font Mono 10
+
+#font pango:Antonio Bold 16
+
+client.focused #f6ef95 #f6ef95 #000000 #a69f45
+client.urgent #ff3500 #ff3500 #000000 #ff3500
+
+client.focused_inactive #b59cce #b59cce #000000 #b59cce
+
+client.focused_tab_title #a69f45 #a69f45 #000000 #a69f45
+
+client.unfocused #9c639c #9c639c #000000 #9c639c
+
+#client.focused #2063f2ff #2063f2ff #ffffffff
 #client.focused_inactive #a2a2a2ff #a2a2a2ff #ffffffff
-client.focused_inactive #4093a244 #4093a244 #ffffffff
-client.unfocused #00000000 #00000000 #ffffffff
+#client.focused_inactive #ff93a244 #ff93a244 #ffffffff
+#client.unfocused #AAAAAAAA #AAAAAAAA #ffffffff
+
+#blur enable
+#blur_passes 1
+#blur_radius 2

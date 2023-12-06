@@ -1,8 +1,14 @@
+output $pDisplay bg ~/Wallpapers/$pWidth.png fill
+
+output $sDisplay bg ~/Wallpapers/spacedock.gif fit #000000
+
 set $wallpaper mpvpaper '*' ~/Wallpapers/active.mp4
 
 exec_always 'swaymsg "set \$currentBrightness $(~/.config/sway/scripts/brightness.sh)"'
 
 exec_always ~/.config/sway/scripts/brightness.sh $currentBrightness all auto
+
+exec_always 'swaymsg "output * dpms on"'
 
 ### Idle configuration
 #
@@ -59,17 +65,18 @@ exec_always killall -9 swayidle; swayidle -w \
     timeout 213 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
     timeout 214 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
     timeout 215 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
-    timeout 3600 'systemctl suspend'
+    timeout 300 'systemctl suspend'
+#    timeout 1800 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
     
-bindsym $mod+Ctrl+Alt+XF86AudioRaiseVolume exec swaynag -m "brightness: $currentBrightness"
+bindsym $mod+Ctrl+Alt+XF86AudioRaiseVolume exec swaynagmode -m "brightness: $currentBrightness"
          
 # timeout 30 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 
 exec wl-clipboard-history -t
+bindsym $mod+Ctrl+Alt+V exec "killall -9 wl-paste; rm $HOME/.clipboard.sqlite; wl-clipboard-history -t"
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg ~/Wallpapers/acidaic.png fill
-exec_always "killall -9 mpvpaper; mpvpaper '*' ~/Wallpapers/active.mp4"
+#exec_always "killall -9 mpvpaper; mpvpaper -o '--ao=null --speed=0.5 --reset-on-next-file=loop --loop-playlist --shuffle --panscan=1 --hwdec=auto input-ipc-server=/tmp/mpv-socket' '*' ~/Wallpapers/active.mp4"
 
 # 6
 # 6
@@ -177,6 +184,6 @@ exec_always "killall -9 mpvpaper; mpvpaper '*' ~/Wallpapers/active.mp4"
 # timeout 58 '~/.config/sway/scripts/brightness.sh 2 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" \
 # timeout 59 '~/.config/sway/scripts/brightness.sh 0 all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh $currentBrightness all auto'" 
 
-exec XDG_CURRENT_DESKTOP=sway /usr/lib/xdg-desktop-portal -r & /usr/lib/xdg-desktop-portal-wlr
-
 exec foot --server
+
+exec XDG_CURRENT_DESKTOP=sway /usr/lib/xdg-desktop-portal -r & /usr/lib/xdg-desktop-portal-wlr

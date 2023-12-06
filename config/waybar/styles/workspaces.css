@@ -1,0 +1,38 @@
+
+#workspaces
+{
+  padding: 0px;
+  margin: 0px;
+}
+
+#workspaces button
+{
+  color: @font;
+  min-height: 0px;
+  border-color: shade(alpha(@borders, 0.9), 2.25);
+  margin: 0 2px 0 2px;
+  border-bottom: 2px solid transparent;
+  background: @lcars7;
+}
+
+#workspaces button.focused
+{
+  background: @lcars10;
+}
+
+#workspaces button.urgent
+{
+  background: @lcars8;
+  color: @font;
+  animation-name: blink;
+  animation-duration: 0.25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#workspaces button:hover
+{
+  background: @lcars1;
+  border-radius: 4px;
+}

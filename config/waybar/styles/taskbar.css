@@ -1,0 +1,59 @@
+
+
+#taskbar
+{
+  background: @base;
+  padding: 5 0 0 0;
+  margin: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  font-size: 10px;
+}
+
+
+#taskbar button:hover
+{
+  background: @lcars1;
+}
+
+#taskbar button
+{
+  color: @font;
+  min-height: 0px;
+  border-color: shade(alpha(@borders, 0.9), 2.25);
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 0 0 5px 0;
+  border-bottom: 2px solid transparent;
+  background: @lcars7;
+}
+
+#taskbar button:first-child
+{
+}
+
+#taskbar button.urgent
+{
+  background: @lcars8;
+}
+
+#taskbar button.minimized
+{
+  background: @lcars1;
+}
+
+#taskbar button.fullscreen
+{
+  background: @lcars6;
+}
+
+#taskbar button.fullscreen.active
+{
+  background: @lcars5;
+}
+
+#taskbar button.active
+{
+  background: @lcars10;
+}

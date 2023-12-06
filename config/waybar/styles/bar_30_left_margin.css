@@ -1,0 +1,41 @@
+.bar_30_left_margin
+{
+  background: transparent;
+}
+
+.bar_30_left_margin .modules-left #custom-corner_top_left
+{
+  margin: 0px;
+  padding-bottom: 0px;
+  min-height: 29px;
+  min-width: 29px;
+  border-radius: 100% 0 0 0;
+  font-size: 5pt;
+  background: @base;
+}
+
+.bar_30_left_margin .modules-right #custom-corner_bottom_left
+{
+  margin: 0px;
+  margin-bottom: -5px;
+  padding-bottom: 0px;
+  min-height: 29px;
+  min-width: 29px;
+  border-radius: 0 0 0 100%;
+  font-size: 5pt;
+  background: @base;
+}
+
+.bar_30_left_margin .modules-left
+{
+  margin: 0;
+  background: @lcars1;
+}
+
+.bar_30_left_margin .modules-right
+{
+  margin: 0;
+  background: @lcars6;
+  
+}
+

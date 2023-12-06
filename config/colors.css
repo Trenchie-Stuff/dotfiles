@@ -1,37 +1,19 @@
-@define-color polar0  #2e3440;
-@define-color polar1  #3b4252;
-@define-color polar2  #434c5e;
-@define-color polar3  #404859;
-@define-color polar4  #4c566a;
+@define-color lcars0 #000000;
+@define-color lcars1 #b59cce;
+@define-color lcars2 #848484;
+@define-color lcars3 #9b6363;
+@define-color lcars4 #455580;
+@define-color lcars5 #fe9b00;
+@define-color lcars6 #ce6363;
+@define-color lcars7 #9c639c;
+@define-color lcars8 #ff3500;
+@define-color lcars9 #ffce63;
+@define-color lcars10 #f6ef95;
 
-/* Snow Storm */
-@define-color snow0  #d8dee9;
-@define-color snow1  #e5e9f0;
-@define-color snow2  #eceff4;
 
-/* Frost */
-@define-color frost0  #8db0AE;
-@define-color frost1  #8fbcbb;
-@define-color frost2  #5c8286;
-@define-color frost3  #88c0d0;
-@define-color frost4  #5e81ac;
-
-/* Aurora */
-@define-color aur1 #bf616a;
-@define-color aur2 #d08770;
-@define-color aur3 #ebcb8b;
-@define-color aur4 #a3be8c;
-@define-color aur5 #b48ead;
-
-/* DARK */
-@define-color bg       @polar0;
-@define-color bg-light @polar3;
-@define-color accent   @frost1;
-@define-color font     @snow2;
-
-/* LIGHT
-@define-color bg       @snow0;
-@define-color bg-light @show1;
-@define-color accent   @frost2;
-@define-color font     @polar0;
-*/
+@define-color bg       @lcars1;
+@define-color bg-light @lcars2;
+@define-color borders  @lcars5;
+@define-color accent   @lcars5;
+@define-color font     @lcars0;
+@define-color base     @lcars0;

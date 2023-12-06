@@ -1,285 +1,398 @@
-{
-    "output": "DP-1",
-    "layer": "top",
-    "position": "top",
 
-    "modules-left": [
-        "custom/launcher",
-        "sway/workspaces",
-        "hyprland/workspaces",
-        "custom/stub",
-        "sway/mode",
-        "sway/window"
-    ],
-    "modules-center": [
-        "idle_inhibitor",
-        "custom/stub",
-        "custom/spotify",
-        "custom/weather",
-        "clock",
-        "custom/stub",
-        "custom/pacman"
-    ],
-    "modules-right": [
-        "tray",
-        "custom/keyboard-layout",
-        "custom/backlight",
-        "memory",
-        "battery",
-        "network",
-        "pulseaudio",
-        "custom/power"
-    ],
+[
+    {
+        "name": "bar_10_top_main",
+        "fixed-center": true,
+        "output": "DP-1",
+        "ipc": true,
+        "id": "10",
+        "position": "top",
 
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{icon}",
-        "persistent_workspaces": {
+        "modules-left": [
+            "custom/pad_left",
+            "sway/workspaces",
+            "custom/artist",
+            "custom/title",
+            "custom/lyrics",
+            "custom/power",
+            "custom/rightend"
+        ],
+        "modules-center": [
+            "custom/center_leftend",
+            "sway/mode",
+            "clock",
+            "custom/launcher",
+            "idle_inhibitor",
+            "custom/rightend"
+        ],
+        "modules-right": [
+            "custom/right_leftend",
+            "sway/window",
+            "hyprland/workspaces",
+            "custom/yay",
+            "tray",
+            "temperature#temp1",
+            "temperature#temp2",
+            "network",
+            "custom/backlight",
+            "pulseaudio",
+            "custom/rightend"
+        ],
+
+        "sway/workspaces": {
+            "rotate": 0,
+            "disable-scroll": true,
+            "all-outputs": true,
+            "format": "{icon}",
+            "persistent_workspaces": {
+            },
+            "format-icons": {
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8",
+                    "11": "Q",
+                    "12": "W",
+                    "13": "E",
+                    "14": "R",
+                    "15": "T",
+                    "16": "Y",
+                    "17": "U",
+                    "18": "I"
+                }
         },
-        "format-icons": {
-                "1": "+1",
-                "2": "+2",
-                "3": "+3",
-                "4": "+4",
-                "5": "+5",
-                "6": "+6",
-                "7": "+7",
-                "8": "+8",
-                "11": "-1",
-                "12": "-2",
-                "13": "-3",
-                "14": "-4",
-                "15": "-5",
-                "16": "-6",
-                "17": "-7",
-                "18": "-8",
-            }
-    },
 
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{icon}",
-        "persistent_workspaces": {
+        "hyprland/workspaces": {
+            "rotate": 0,
+            "disable-scroll": true,
+            "all-outputs": true,
+            "format": "{icon}",
+            "persistent_workspaces": {
+            },
+            "format-icons": {
+                    "1": "+1",
+                    "2": "+2",
+                    "3": "+3",
+                    "4": "+4",
+                    "5": "+5",
+                    "6": "+6",
+                    "7": "+7",
+                    "8": "+8",
+                    "9": "-1",
+                    "10": "-2",
+                    "11": "-3",
+                    "12": "-4",
+                    "13": "-5",
+                    "14": "-6",
+                    "15": "-7",
+                    "16": "-8",
+                    "21": "*1",
+                    "22": "*2",
+                    "23": "*3",
+                    "24": "*4",
+                    "25": "*5",
+                    "26": "*6",
+                    "27": "*7",
+                    "28": "*8",
+                    "29": "/1",
+                    "30": "/2",
+                    "31": "/3",
+                    "32": "/4",
+                    "33": "/5",
+                    "34": "/6",
+                    "35": "/7",
+                    "36": "/8"
+                }
         },
+
+        "sway/mode": {
+            "format": "<span style=\"italic\">{}</span>"
+        },
+
+        "sway/window": {
+            "icon": false,
+            "rotate": 0,
+            "format": "{}",
+            "all-outputs": true
+        },
+
+        "idle_inhibitor": {
+        "format": "{icon}",
         "format-icons": {
-                "1": "+1",
-                "2": "+2",
-                "3": "+3",
-                "4": "+4",
-                "5": "+5",
-                "6": "+6",
-                "7": "+7",
-                "8": "+8",
-                "9": "-1",
-                "10": "-2",
-                "11": "-3",
-                "12": "-4",
-                "13": "-5",
-                "14": "-6",
-                "15": "-7",
-                "16": "-8",
-                "21": "*1",
-                "22": "*2",
-                "23": "*3",
-                "24": "*4",
-                "25": "*5",
-                "26": "*6",
-                "27": "*7",
-                "28": "*8",
-                "29": "/1",
-                "30": "/2",
-                "31": "/3",
-                "32": "/4",
-                "33": "/5",
-                "34": "/6",
-                "35": "/7",
-                "36": "/8",
+                "activated": "",
+                "deactivated": ""
             }
-    },
+        },
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
+        "tray": {
+            "icon-size": 14,
+            "spacing": 5
+        },
+        
+        "custom/artist": {
+            "rotate": 0,
+            "format":" {} ",
+            "align": 0,
+            "tooltip": false,
+            "exec": "playerctl metadata --format '{{ trunc(xesam:albumArtist,35) }}' -F",
+            "escape": true
+        },
+        
+        "custom/pad_left": {
+            "rotate": 0,
+            "format":"  {}   ",
+            "align": 0,
+            "tooltip": false,
+            "exec": "echo '  '"
+        },
+        
+        "custom/title": {
+            "rotate": 0,
+            "align": 0,
+            "tooltip": false,
+            "exec": "playerctl metadata --format '{{ trunc(title,35) }}' -F",
+            "escape": true
+        },
+        
+        "custom/lyrics": {
+            "rotate": 0,
+            "format":"{}",
+            "align": 0,
+            "tooltip": false,
+            "exec": "sptlrx pipe",
+            "on-click": "footclient -T sptlrx sptlrx",
+            "escape": true
+        },
 
-    "sway/window": {
-        "icon": false,
-        "format": "{}"
-    },
+        "clock": {
+            "rotate": 0,
+            "format": " {:%Y-%m-%dT%H:%M:%S%z}",
+            "format-alt": " {:%a %d %b  %H:%M:%S}",
+            "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+            "interval": 1
+        },
 
-    "idle_inhibitor": {
-       "format": "{icon}",
-       "format-icons": {
-            "activated": "",
-            "deactivated": ""
+        "temperature#temp1": {
+            "hwmon-path": "/sys/class/hwmon/hwmon3/temp3_input",
+            "critical-threshold": 95,
+            "interval": 1,
+            "align": 1,
+            "format": "{temperatureC}°C "
+        },
+        
+        "temperature#temp2": {
+            "hwmon-path": "/sys/class/hwmon/hwmon3/temp4_input",
+            "critical-threshold": 95,
+            "interval": 1,
+            "align": 1,
+            "format": "{temperatureC}°C "
+        },
+
+        "custom/backlight": {
+        },
+        
+        "network": {
+            "rotate": 0,
+            "format": "⚠ Disabled",
+            "format-wifi": "  {essid}",
+            "format-ethernet": "",
+            "format-disconnected": "⚠ Disconnected",
+            "on-click": "networkmanager_dmenu",
+            "tooltip" : true,
+            "tooltip-format" : "{ifname}\n{ipaddr}",
+            "tooltip-format-wifi" : "{essid} {ifname}\n{ipaddr}\nstrength: {signalStrength}%"
+        },
+
+        "pulseaudio": {
+            "rotate": 0,
+            "align": 0,
+            "scroll-step": 5,
+            "format": "{icon}{volume}",
+            "format-bluetooth": "󰂯 {volume}",
+            "format-muted":"󰝟 {volume}",
+            "format-icons": {
+                "headphones": "",
+                "handsfree": "",
+                "headset": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": ["  ", " "]
+            },
+            "on-click": "pavucontrol"
+        },
+
+        "custom/center_leftend" : {
+            "rotate": 0,
+            "format": " {} ",
+            "exec": "echo  \" \""
+        },
+
+        "custom/right_leftend" : {
+            "rotate": 0,
+            "format": " {} ",
+            "exec": "echo  \" \""
+        },
+        "custom/rightend" : {
+            "rotate": 0,
+            "format": "{}",
+            "exec": "echo  \" \""
+        },
+
+        "custom/launcher": {
+            "rotate": 0,
+            "format":"{}",
+            "on-click": "exec dmenu_path | wmenu -b -f \"Antonio 12\" -i -p \"LCARS\" | xargs swaymsg exec --",
+            "tooltip": false,
+            "exec" : "echo brian"
+        },
+
+        "custom/yay": {
+            "rotate": 0,
+            "format": " {}",
+            "interval": 7200,                     // every two hours
+            "exec": "yay -Sy > /dev/null; yay -Qu | wc -l",       // # of updates
+            "exec-if": "exit $(($(yay -Qu | wc -l) == 0 ? 1 : 0))",                  // always run; consider advanced run conditions
+            "on-click": "foot -e yay -Syu ; pkill -SIGRTMIN+8 waybar", // update system
+            "signal": 8
         }
-    },
 
-    "tray": {
-        "icon-size": 14,
-        "spacing": 5
     },
+    {
+        "name": "bar_20_left_main",
+        "output": "DP-1",
+        "ipc": true,
+        "id": "20",
+        "position": "left",
+        "modules-left": [
+            "custom/top_left_edge_curve",
+            "custom/top_left_album",
+            "custom/top_left_year",
+            "custom/top_left_extension",
+            "custom/top_left_bottom_edge",
 
-    "clock": {
-        "format": " {:%a %d %b  %H:%M}",	//24 hour format
-        "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
-        "interval": 1
-    },
-
-    "cpu": {
-        "format": "﬙ {usage}%",
-        "on-click": "alacritty -e htop"
-    },
-
-    "memory": {
-        "format": " {used:0.1f}GB",
-        "on-click": "alacritty -e htop"
-    },
-
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C ",
-        "format": "{temperatureC}°C "
-    },
-
-    "custom/backlight": {
-        "format":"{}%",
-        "tooltip": false,
-        "exec": "$HOME/.config/waybar/scripts/backlight.sh"
-    },
-    
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""],
-        "on-scroll-down": "brightnessctl -c backlight set 5%",
-        "on-scroll-up": "brightnessctl -c backlight set +5%"
-    },
-
-    "battery": {
-        "interval": 30,
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
+        ],
+        "modules-center": [
+            "custom/center_left_top_edge",
+            "wlr/taskbar",
+            "custom/center_left_bottom_edge"
+        ],
+        "modules-right": [
+            "custom/bottom_left_top_edge",
+            "cpu",
+            "memory",
+            "custom/center_bottom_bottom_curve"
+        ],
+        "wlr/taskbar": {
+            "all-outputs": true,
+            "format": "{app_id} ## {title}",
+            "rewrite": {
+                "^.* ## (.{30}).* ([^ ]+)$": "$2 $1..",
+                "^.* ## (.{1,30}).*$": "$1..",
+           },
+           "on-click": "activate",
+           "on-click-right": "fullscreen",
+           "sort-by-app-id": true
         },
-        "format-charging": " {capacity}%",
-        "format": "{icon}  {capacity}%",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip": true
-    },
-
-     "network": {
-        "format": "⚠ Disabled",
-        "format-wifi": " ",
-        "format-ethernet": " {ifname}",
-        "format-disconnected": "⚠ Disconnected",
-        "on-click": "networkmanager_dmenu",
-        "tooltip" : true,
-        "tooltip-format" : "{ifname}\n{ipaddr}",
-        "tooltip-format-wifi" : "{essid} {ifname}\n{ipaddr}\nstrength: {signalStrength}%"
-    },
-
-    "pulseaudio": {
-        "scroll-step": 5,
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-muted":"muted ",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
+        "custom/top_left_edge_curve" : {
+            "rotate": 0,
+            "format": "\n {}  ",
+            "align": 1,
+            "return-type": "string",
+            "exec": "echo ' '"
         },
-        "on-click": "pavucontrol"
-    },
-
-    "custom/stub" : {
-        "format": " {} ",
-        "exec": "echo  \":\""
-    },
-
-    "custom/spotify": {
-         "exec": "/usr/bin/python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
-         "format": " {} ",
-         "return-type": "json",
-         "on-click": "playerctl play-pause",
-         "on-scroll-up": "playerctl next",
-         "on-scroll-down": "playerctl previous"
-     },
-
-     "custom/launcher": {
-    	   "format":"{}",
-    	   "on-click": "exec rofi -no-lazy-grab -show drun -theme $HOME/.config/hypr/rofi/list_launcher.rasi",
-    	   "tooltip": false,
-         "exec" : "echo $USER"
-     },
-
-    "custom/weather": {
-         "format": "{}",
-         "tooltip": true,
-         "interval": 3600,
-         "exec": "$HOME/.config/waybar/scripts/waybar-wttr.py",
-         "return-type": "json"
-    },
-
-   "custom/pacman": {
-        "format": " {}",
-        "interval": 7200,                     // every two hours
-        "exec": "yay -Sy > /dev/null; yay -Qu | wc -l",       // # of updates
-        "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "foot -e yay -Syu ; pkill -SIGRTMIN+8 waybar", // update system
-        "signal": 8
-    },
-
-    "custom/power": {
-      	"format":" ⏻ ",
-       	"on-click": "nwgbar",
-      	"tooltip": false,
-    },
-
-    "custom/vnc": {
-         "format": "💻 {}",
-         "exec": "$HOME/.config/sway/scripts/vnc_server.sh",
-         "on-click": "$HOME/.config/sway/scripts/vnc_server.sh $(cat /tmp/VNC_CHANGE_STATE_VAR)",
-
-         "return-type": "json",
-				 "tooltip" : true,
-         "interval": "once",
-         "signal": 5
-    },
-
-     // to find keyboard identifier use "swaymsg -t get_inputs"
-    "custom/keyboard-layout": {
-         "format": " {}",
-      	 "tooltip": false,
-         "exec": "$HOME/.config/waybar/scripts/kblayout.sh"
-         // "on-click": "swaymsg exec alacritty -e ~/.config/sway/scripts/keyhint.sh",
-         // "exec": "$HOME/.config/waybar/scripts/kblayout.sh '1:1:AT_Translated_Set_2_keyboard'"
-         // "exec": "$HOME/.config/waybar/scripts/kblayout.sh '6700:3620:SEM_USB_Keyboard'"
-     },
-
-     "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 14,
-        "icon-theme": "Numix-Circle",
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close"
-      },
-
-     "custom/arrowL0": {
-    	   "format":""
-      },
-
-     "custom/arrowR0": {
-    	   "format":""
-      },
-}
+        "custom/top_left_extension" : {
+            "rotate": 0,
+            "format": "{} ",
+            "align": 1,
+            "return-type": "string",
+            "exec": "echo ' '"
+        },
+        "custom/top_left_album" : {
+            "rotate": 0,
+            "format": "{} ",
+            "align": 1,
+            "return-type": "string",
+            "escape": true,
+            "exec": "playerctl metadata --format '{{trunc(artist,30)}} - {{ trunc(year,35) }}' -F"
+        },
+        "custom/top_left_year" : {
+            "rotate": 0,
+            "format": "{} ",
+            "align": 1,
+            "return-type": "string",
+            "exec": "playerctl metadata --format '{{ trunc(album,35) }}' -F",
+            "escape": true
+        },
+        "custom/top_left_lyrics" : {
+            "rotate": 0,
+            "format": "{} \n",
+            "align": 1,
+            "return-type": "string",
+            "exec": "sptlrx pipe"
+        },
+        "custom/center_left_top_edge" : {
+            "rotate": 0,
+            "format": "{} \n\n",
+            "align": 1,
+            "return-type": "string",
+            "exec": "~/.config/waybar/scripts/numPipe"
+        },
+        "custom/center_left_bottom_edge" : {
+            "rotate": 0,
+            "format": "\n\n {} ",
+            "align": 1,
+            "return-type": "string",
+            "exec": "~/.config/waybar/scripts/numPipe"
+        },
+        "custom/top_left_bottom_edge" : {
+            "rotate": 0,
+            "format": "{} ",
+            "align": 1,
+            "return-type": "string",
+            "exec": "~/git/lyrics/app/lyrics"
+        },
+        "custom/top_left_bottom_edge_old" : {
+            "rotate": 0,
+            "format": "{} ",
+            "align": 1,
+            "return-type": "string",
+            "exec": "playerctl metadata --format '{{ position }}' -F"
+        },
+        "custom/top_left_bottom_edge2" : {
+            "rotate": 0,
+            "format": "{} ",
+            "align": 1,
+            "return-type": "string",
+            "exec": "playerctl metadata --format '{{ mpris:length }} ' -F"
+        },
+        "custom/bottom_left_top_edge" : {
+            "rotate": 0,
+            "format": "{} \n\n",
+            "align": 1,
+            "return-type": "string",
+            "exec": "~/.config/waybar/scripts/numPipe"
+        },
+        "custom/center_bottom_bottom_curve" : {
+            "rotate": 0,
+            "format": " {} ",
+            "return-type": null,
+            "exec": "echo  ' '"
+        },
+        "cpu": {
+            "format": "{icon} {usage:>2}%",
+            "interval": 3,
+            "on-click": "footclient btop",
+            "format-icons": ["", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
+        },
+        "memory": {
+            "rotate": 0,
+            "format": " {used:0.1f}GB",
+            "on-click": "footclient btop"
+        }
+    }
+]

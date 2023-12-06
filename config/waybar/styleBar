@@ -1,0 +1,27 @@
+{
+        "name": "bar_30_left_margin",
+        "output": "DP-1",
+        "ipc": true,
+        "id": "30",
+        "layer": "bottom",
+        "exclusive": false,
+        "position": "left",
+        "modules-left": [
+            "custom/corner_top_left"
+        ],
+        "modules-center": [
+        ],
+        "modules-right": [
+            "custom/corner_bottom_left"
+        ],
+        "custom/corner_top_left" : {
+            "rotate": 0,
+            "format": " {} ",
+            "exec": "echo  \" \""
+        },
+        "custom/corner_bottom_left" : {
+            "rotate": 0,
+            "format": " {} ",
+            "exec": "echo  \" \""
+        }
+    },

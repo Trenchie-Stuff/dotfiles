@@ -12,7 +12,7 @@
 }
 {
     "label" : "exit",
-    "action" : "hyprctl dispatch exit",
+    "action" : "swaymsg exit",
     "text" : "Exit",
     "keybind" : "x"
 }

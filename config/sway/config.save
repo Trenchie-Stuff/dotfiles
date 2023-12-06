@@ -71,7 +71,6 @@ input * {
     bindsym $mod+q kill
 
     # Start your launcher
-    # bindsym $mod+d exec $menu
     bindsym $mod+d exec rofi -no-lazy-grab -show drun -theme $HOME/.config/hypr/rofi/list_launcher.rasi
     bindsym $mod+b exec rofi-bluetooth
     bindsym $mod+g exec rofi -show filebrowser
