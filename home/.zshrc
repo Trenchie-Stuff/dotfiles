@@ -37,9 +37,9 @@ nvm use default 1> /dev/null
 
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
 
-alias lt='eza --icons -abo --group-directories-first --git --no-permissions --color always -lh --sort=size --tree --level'
-alias ls='eza --icons -abo --group-directories-first --git --no-permissions --color-scale all --color always -lh --sort=size'
-alias lls='eza --icons -abo --group-directories-first --git --no-permissions --color-scale all --color always -lh --total-size --sort=size'
+alias lt='eza --icons -abo --group-directories-first --git --no-permissions --color always -lh --tree --level'
+alias ls='eza --icons -abo --group-directories-first --git --no-permissions --color-scale all --color always -lh'
+alias lls='eza --icons -abo --group-directories-first --git --no-permissions --color-scale all --color always -lh --total-size'
 alias less='less -r'
 
 alias ff="firefox"

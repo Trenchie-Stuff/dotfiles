@@ -5,7 +5,7 @@
   margin-left: 5px;
   margin-right: 0px;
   padding-bottom: 2px;
-  min-width: 310px;
+  min-width: 313px;
   border-radius: 50%/100% 0.001px 0.001px 0.001px;
   font-size: 11pt;
   border: 0px solid @lcars1;
@@ -19,20 +19,20 @@
   margin-right: 0px;
   margin-bottom: 5px;
   padding-bottom: 2px;
-  min-width: 310px;
+  min-width: 313px;
   min-height: 25px;
   border-radius: 0;
   font-size: 12pt;
   background: @lcars1;
 }
-.bar_20_left_main .modules-left #custom-top_left_album
 
+.bar_20_left_main .modules-left #custom-top_left_album
 {
   margin-left: 5px;
   margin-right: 0px;
   margin-bottom: 0px;
   padding-bottom: 2px;
-  min-width: 310px;
+  min-width: 313px;
   min-height: 25px;
   border-radius: 0;
   font-size: 12pt;
@@ -45,7 +45,7 @@
   margin-right: 0px;
   margin-bottom: 0px;
   padding-bottom: 2px;
-  min-width: 310px;
+  min-width: 315px;
   min-height: 25px;
   border-radius: 0;
   font-size: 12pt;
@@ -53,13 +53,23 @@
 }
 
 
+.bar_20_left_main .modules-left #cava
+{
+  margin-left: 6px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border-radius: 0;
+  background: @font;
+  color: @lcars6;
+}
 .bar_20_left_main .modules-left #custom-top_left_lyrics
 {
   margin-left: 5px;
   margin-right: 0px;
   margin-bottom: 5px;
   padding-bottom: 2px;
-  min-width: 310px;
+  min-width: 313px;
   min-height: 55px;
   border-radius: 0;
   font-size: 10pt;
@@ -72,7 +82,7 @@
   margin-right: 0px;
   margin-bottom: 0px;
   padding-bottom: 2px;
-  min-width: 310px;
+  min-width: 313px;
   min-height: 50px;
   /* text-align: right; */
   
@@ -86,7 +96,7 @@
   margin-right: 0px;
   margin-bottom: 0px;
   padding-bottom: 2px;
-  min-width: 310px;
+  min-width: 313px;
   min-height: 0px;
   /* text-align: right; */
   
@@ -97,13 +107,13 @@
 
 
 
-.bar_20_left_main .modules-center #custom-center_left_top_edge
+.bar_20_left_main #custom-center_left_top_edge
 {
     margin-left: 5px;
     margin-right: 0px;
     margin-bottom: 5px;
     padding-bottom: 2px;
-    min-width: 310px;
+    min-width: 313px;
     min-height: 55px;
     border-radius: 0;
     font-size: 9pt;
@@ -119,7 +129,7 @@
     margin-right: 0px;
     margin-bottom: 0px;
     padding-bottom: 2px;
-    min-width: 310px;
+    min-width: 313px;
     min-height: 25px;
     font-size: 9pt;
     background: @lcars1;
@@ -128,7 +138,7 @@
 
 .bar_20_left_main .modules-center 
 {
-    background: @lcars1;
+    /* background: @lcars1; */
     border-radius: 30 0 0 30;   
 }
 
@@ -140,7 +150,7 @@
   margin-bottom: 5px;
   padding-bottom: 2px;
   padding-right: 2px;
-  min-width: 310px;
+  min-width: 313px;
   min-height: 55px;
   border-radius: 0;
   font-size: 9pt;
@@ -153,7 +163,7 @@
   margin-right: 0px;
   margin-bottom: 0px;
   padding-bottom: 2px;
-  min-width: 310px;
+  min-width: 313px;
   min-height: 25px;
   border-radius: 0 0 0 30px;
   

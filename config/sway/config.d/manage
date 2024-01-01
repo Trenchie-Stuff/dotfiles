@@ -6,6 +6,6 @@
 bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+q exec ~/.config/sway/scripts/exit.sh
+# bindsym $mod+Shift+q exec ~/.config/sway/scripts/exit.sh
 
-bindsym $mod+Shift+Alt+Q exec \
+# bindsym $mod+Shift+Alt+Q exec \

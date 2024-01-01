@@ -110,6 +110,8 @@
     # =========================[ Line #2 ]=========================
     newline
     vcs                     # git status
+    systemd                 # systemd status
+    docker                  # docker status
     # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
@@ -1762,6 +1764,32 @@
   # can slow down prompt by 1-2 milliseconds, so it's better to keep it turned off unless you
   # really need it.
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
+  
+  function prompt_docker() {
+    systemctl status docker.service 2>&1 1> /dev/null
+    if [[ $? -eq 0 ]];
+    then 
+      # docker is running
+      p10k segment -b 75 -f 0 -i '🚢' -t "$(docker container ls -q | wc -l)"
+    fi
+  }
+  function instant_prompt_docker() {
+    p10k segment -b 75 -f 0 -i '🚢' -t "..."
+  }
+
+  function prompt_systemd() {
+    sysFailed=$(systemctl --state=failed -q | wc -l)
+    if [[ $sysFailed -eq 0 ]];
+    then
+      p10k segment -b 39 -f 0 -i "[●◀]" -t "$(systemctl --state=running -q | wc -l)"
+    else
+      p10k segment -b 0 -f 124 -i '[●◀]' -t "$sysFailed"
+    fi
+  }
+  function instant_prompt_systemd() {
+    p10k segment -b 39 -f 0 -i '[●◀]' -t "..."
+  }
+
 
   # If p10k is already loaded, reload configuration.
   # This works even with POWERLEVEL9K_DISABLE_HOT_RELOAD=true.

@@ -29,10 +29,8 @@ window#waybar
 
 tooltip
 {
-  background: rgba(43, 48, 59, 0.95);
-  border: 1px solid rgba(100, 114, 125, 0.8);
-  border-radius: 7px;
-  border-color: shade(alpha(@borders, 0.9), 2.25);
+  min-width: 900px;
+  background: @lcars1;
 }
 
 button:hover
@@ -41,16 +39,35 @@ button:hover
   text-shadow: inherit;
 }
 
-
 #mode
 {
   color: @font;
 }
 
-#clock
+#clock.PST
 {
-  background: @bg;
-  min-width: 230px;
+  background: @lcars2;
+}
+
+#clock.MST
+{
+  background: @lcars2;
+}
+
+#clock.CST
+{
+  background: @lcars1;
+}
+
+#clock.date
+{
+  background: @lcars5;
+}
+
+#clock.EST
+{
+  background: @lcars6;
+  min-width: 70px;
 }
 
 
@@ -61,7 +78,7 @@ button:hover
   margin-left: 0px;
 }
 
-#clock, #custom-lyrics, #custom-pad_left, #custom-title, #custom-artist, #custom-power, #battery, #idle_inhibitor, #temperature, #custom-keyboard-layout, #backlight, #network, #pulseaudio, #mode, #custom-yay, #custom-backlight, #window, #tray, #custom-launcher, #custom-ddate, #custom-rightend, #custom-right_leftend, #custom-center_leftend
+#clock, #custom-lyrics, #custom-duodclock, #custom-pad_left, #custom-title, #custom-artist, #custom-power, #battery, #idle_inhibitor, #temperature, #custom-keyboard-layout, #backlight, #network, #pulseaudio, #mode, #custom-yay, #custom-backlight, #window, #tray, #custom-launcher, #custom-ddate, #custom-rightend, #custom-right_leftend, #custom-center_leftend
 {
   margin-right: 2px;
   margin-left: 2px;
@@ -79,7 +96,7 @@ button:hover
   background: @bg;
 }
 
-#custom-power, #battery, #temperature, #custom-keyboard-layout, #backlight, #mode, #custom-ddate
+#custom-duodclock, #custom-power, #battery, #temperature, #custom-keyboard-layout, #backlight, #mode, #custom-ddate
 {
   background: @lcars9;
 }

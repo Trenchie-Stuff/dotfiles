@@ -1,0 +1,83 @@
+#! /bin/bash
+
+#define icons for workspaces 9-16
+#ic=(0     輸  " " " " )
+ic=(0   󰨞         󰣡 󰣥 󰣧 󰣤 󰣢 󰣣 󰣦 󰕞)
+
+export sp="a"
+
+#initial check for occupied workspaces
+for num in $(hyprctl workspaces | grep ID | awk '{print $3}'); do 
+  export o"$num"="$num"
+done
+ 
+#initial check for focused workspace
+for num in $(hyprctl monitors | grep -B 4 "focused: yes" | awk 'NR==1{print $3}'); do 
+  export f"$num"="$num"
+  export fnum=f"$num"
+  export mon=$(hyprctl monitors | grep -B 2 "\($num\)" | awk 'NR==1{print $2}')
+done
+
+workspaces() {
+if [[ ${1:0:9} == "workspace" ]] && [[ ${1:11} != "special" ]]; then #set focused workspace
+  unset -v "$fnum" 
+  num=${1:11:12}
+  export f"$num"="$num"
+  export fnum=f"$num"
+
+elif [[ ${1:0:10} == "focusedmon" ]]; then #set focused workspace following monitor focus change
+  unset -v "$fnum"
+  string=${1:12:13}
+  num=${string##*,}
+  export mon=${string/,*/}
+  export f"$num"="$num"
+  export fnum=f"$num"
+
+elif [[ ${1:0:13} == "moveworkspace" ]] && [[ ${1##*,} == "$mon" ]]; then #Set focused workspace following swapactiveworkspace
+  unset -v "$fnum"
+  string=${1:15:16}
+  num=${string/,*/}
+  export f"$num"="$num"
+  export fnum=f"$num"
+
+elif [[ ${1:0:15} == "createworkspace" ]]; then #set Occupied workspace
+  num=${1:17:18}
+  export o"$num"="$num"
+  export onum=o"$num"
+
+elif [[ ${1:0:16} == "destroyworkspace" ]]; then #unset unoccupied workspace
+  num=${1:18:19}
+  unset -v o"$num"
+fi
+
+}
+module() {
+#output eww widget
+echo 	"(eventbox :onscroll \"echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xargs hyprctl dispatch workspace\" \
+          (box	:class \"works\"	:orientation \"v\" :spacing 5 :space-evenly \"false\" :valign \"center\"	\
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 9\'\" :onrightclick \"hyprctl dispatch workspace 9 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o9$sp$f9\" \"${ic[1]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 10\'\" :onrightclick \"hyprctl dispatch workspace 10 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o10$sp$f10\" \"${ic[2]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 11\'\" :onrightclick \"hyprctl dispatch workspace 11 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o11$sp$f11\" \"${ic[3]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 12\'\" :onrightclick \"hyprctl dispatch workspace 12 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o12$sp$f12\" \"${ic[4]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 13\'\" :onrightclick \"hyprctl dispatch workspace 13 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o13$sp$f13\" \"${ic[5]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 14\'\" :onrightclick \"hyprctl dispatch workspace 14 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o14$sp$f14\" \"${ic[6]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 15\'\" :onrightclick \"hyprctl dispatch workspace 15 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o15$sp$f15\" \"${ic[7]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 16\'\" :onrightclick \"hyprctl dispatch workspace 16 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o16$sp$f16\" \"${ic[8]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 29\'\" :onrightclick \"hyprctl dispatch workspace 29 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o29$sp$f29\" \"${ic[9]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 30\'\" :onrightclick \"hyprctl dispatch workspace 30 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o30$sp$f30\" \"${ic[10]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 31\'\" :onrightclick \"hyprctl dispatch workspace 31 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o31$sp$f31\" \"${ic[11]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 32\'\" :onrightclick \"hyprctl dispatch workspace 32 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o32$sp$f32\" \"${ic[12]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 33\'\" :onrightclick \"hyprctl dispatch workspace 33 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o33$sp$f33\" \"${ic[13]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 34\'\" :onrightclick \"hyprctl dispatch workspace 34 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o34$sp$f34\" \"${ic[14]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 35\'\" :onrightclick \"hyprctl dispatch workspace 35 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o35$sp$f35\" \"${ic[15]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/scripts/workspace.sh 36\'\" :onrightclick \"hyprctl dispatch workspace 36 && $HOME/.config/hypr/scripts/default_app.sh\" :class \"_0mar _0$sp$o36$sp$f36\" \"${ic[16]}\") \
+          )\
+        )" | tee ~/.ewwt
+}
+
+module
+
+socat -u UNIX-CONNECT:/tmp/hypr/"$HYPRLAND_INSTANCE_SIGNATURE"/.socket2.sock - | while read -r event; do 
+workspaces "$event"
+module
+done

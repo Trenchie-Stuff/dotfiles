@@ -10,25 +10,29 @@
 
         "modules-left": [
             "custom/pad_left",
+            "hyprland/workspaces",
             "sway/workspaces",
             "custom/artist",
             "custom/title",
             "custom/lyrics",
             "custom/power",
-            "custom/rightend"
+            "custom/rightend",
         ],
         "modules-center": [
             "custom/center_leftend",
             "sway/mode",
-            "clock",
-            "custom/launcher",
+            "clock#date",
+            "clock#PST",
+            "clock#MST",
+            "clock#CST",
+            "clock#EST",
             "idle_inhibitor",
+            "custom/launcher",
             "custom/rightend"
         ],
         "modules-right": [
             "custom/right_leftend",
-            "sway/window",
-            "hyprland/workspaces",
+            // "sway/window",
             "custom/yay",
             "tray",
             "temperature#temp1",
@@ -38,7 +42,6 @@
             "pulseaudio",
             "custom/rightend"
         ],
-
         "sway/workspaces": {
             "rotate": 0,
             "disable-scroll": true,
@@ -117,7 +120,8 @@
             "icon": false,
             "rotate": 0,
             "format": "{}",
-            "all-outputs": true
+            "all-outputs": true,
+            "on-click": "exec ~/.config/sway/scripts/switch.sh",
         },
 
         "idle_inhibitor": {
@@ -138,7 +142,8 @@
             "format":" {} ",
             "align": 0,
             "tooltip": false,
-            "exec": "playerctl metadata --format '{{ trunc(xesam:albumArtist,35) }}' -F",
+            "interval": 1,
+            "exec": "playerctl metadata --format '{{ trunc(xesam:albumArtist,35) }}'",
             "escape": true
         },
         
@@ -154,7 +159,8 @@
             "rotate": 0,
             "align": 0,
             "tooltip": false,
-            "exec": "playerctl metadata --format '{{ trunc(title,35) }}' -F",
+            "interval": 1,
+            "exec": "playerctl metadata --format '{{ trunc(title,35) }}'",
             "escape": true
         },
         
@@ -167,11 +173,67 @@
             "on-click": "footclient -T sptlrx sptlrx",
             "escape": true
         },
-
-        "clock": {
+        // "clock#date": {
+        //     "format": "{:%H:%M}  ",
+        //     "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+        //     "tooltip-format": "<tt><small>{calendar}<small></tt>",
+        //     "calendar": {
+        //         "mode"          : "month",
+        //         "mode-mon-col"  : 3,
+        //         "on-scroll"     : 1,
+        //         "on-click-right": "mode",
+        //         "format": {
+        //             "months":     "<span color='#220022'><b>{}</b></span>",
+        //             "days":       "<span color='#002200'><b>{}</b></span>",
+        //             "weekdays":   "<span color='#000022'><b>{}</b></span>",
+        //             "today":      "<span color='#220000'><b><u>{}</u></b></span>"
+        //         }
+        //     },
+        //     "actions": {
+        //         "on-click-right": "mode",
+        //         "on-click-forward": "tz_up",
+        //         "on-click-backward": "tz_down",
+        //         "on-scroll-up": "shift_up",
+        //         "on-scroll-down": "shift_down"
+        //     }
+        // },
+        "clock#EST": {
             "rotate": 0,
-            "format": " {:%Y-%m-%dT%H:%M:%S%z}",
-            "format-alt": " {:%a %d %b  %H:%M:%S}",
+            "format": "{:%H:%M:%S}",
+            "format-alt": " {:%H:%M:%S}",
+            "interval": 1,
+            "timezones": [
+                "America/New_York"
+            ]
+        },
+        "clock#CST": {
+            "rotate": 0,
+            "format": "{:%H}",
+            "interval": 1,
+            "timezones": [
+                "America/Chicago"
+            ]
+        },
+        "clock#MST": {
+            "rotate": 0,
+            "format": "{:%H}",
+            "interval": 1,
+            "timezones": [
+                "America/Denver"
+            ]
+        },
+        "clock#PST": {
+            "rotate": 0,
+            "format": "{:%H}",
+            "interval": 1,
+            "timezones": [
+                "America/Los_Angeles"
+            ]
+        },
+        "clock#date": {
+            "rotate": 0,
+            "format-alt": "{:%Y/%m/%d}",
+            "format": "{:%b %d, %Y}",
             "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
             "interval": 1
         },
@@ -246,7 +308,7 @@
         "custom/launcher": {
             "rotate": 0,
             "format":"{}",
-            "on-click": "exec dmenu_path | wmenu -b -f \"Antonio 12\" -i -p \"LCARS\" | xargs swaymsg exec --",
+            "on-click": "exec footclient",
             "tooltip": false,
             "exec" : "echo brian"
         },
@@ -273,20 +335,39 @@
             "custom/top_left_album",
             "custom/top_left_year",
             "custom/top_left_extension",
-            "custom/top_left_bottom_edge",
-
+            "custom/top_left_bottom_edge"
+//            "cava#bottom",
         ],
         "modules-center": [
-            "custom/center_left_top_edge",
-            "wlr/taskbar",
-            "custom/center_left_bottom_edge"
         ],
         "modules-right": [
-            "custom/bottom_left_top_edge",
+            "custom/center_left_top_edge",
+            "wlr/taskbar",
             "cpu",
             "memory",
             "custom/center_bottom_bottom_curve"
         ],
+        "cava#bottom": {
+            "hide_on_silence": true,
+            "framerate": 90,
+            "bars": 21,
+            "rotate": 180,
+            "lower_cutoff_freq": 50,
+            "orientation": "top",
+            "higher_cutoff_freq": 10000,
+            "method": "pulse",
+            "source": "auto",
+            "reverse": true,
+            "stereo": false,
+            "bar_delimiter": 0,
+            "monstercat": false,
+            "noise_reduction": 0.77,
+            "input_delay": 2,
+            "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+            "actions": {
+                       "on-click-right": "mode"
+                       }
+        },
         "wlr/taskbar": {
             "all-outputs": true,
             "format": "{app_id} ## {title}",
@@ -318,14 +399,16 @@
             "align": 1,
             "return-type": "string",
             "escape": true,
-            "exec": "playerctl metadata --format '{{trunc(artist,30)}} - {{ trunc(year,35) }}' -F"
+            "interval": 1,
+            "exec": "playerctl metadata --format '{{trunc(artist,30)}} - {{ trunc(year,35) }}'"
         },
         "custom/top_left_year" : {
             "rotate": 0,
             "format": "{} ",
             "align": 1,
             "return-type": "string",
-            "exec": "playerctl metadata --format '{{ trunc(album,35) }}' -F",
+            "interval": 1,
+            "exec": "playerctl metadata --format '{{ trunc(album,35) }}'",
             "escape": true
         },
         "custom/top_left_lyrics" : {
@@ -337,7 +420,7 @@
         },
         "custom/center_left_top_edge" : {
             "rotate": 0,
-            "format": "{} \n\n",
+            "format": "\n\n {}  ",
             "align": 1,
             "return-type": "string",
             "exec": "~/.config/waybar/scripts/numPipe"
@@ -361,14 +444,16 @@
             "format": "{} ",
             "align": 1,
             "return-type": "string",
-            "exec": "playerctl metadata --format '{{ position }}' -F"
+            "interval": 1,
+            "exec": "playerctl metadata --format '{{ position }}'"
         },
         "custom/top_left_bottom_edge2" : {
             "rotate": 0,
             "format": "{} ",
             "align": 1,
             "return-type": "string",
-            "exec": "playerctl metadata --format '{{ mpris:length }} ' -F"
+            "interval": 1,
+            "exec": "playerctl metadata --format '{{ mpris:length }} '"
         },
         "custom/bottom_left_top_edge" : {
             "rotate": 0,

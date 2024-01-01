@@ -4,6 +4,10 @@ output $sDisplay bg ~/Wallpapers/spacedock.gif fit #000000
 
 set $wallpaper mpvpaper '*' ~/Wallpapers/active.mp4
 
+exec_always 'killall -9 mako; sleep 2; mako'
+
+exec '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
+
 exec_always 'swaymsg "set \$currentBrightness $(~/.config/sway/scripts/brightness.sh)"'
 
 exec_always ~/.config/sway/scripts/brightness.sh $currentBrightness all auto
@@ -14,7 +18,7 @@ exec_always 'swaymsg "output * dpms on"'
 #
 # Example configuration:
 #
-exec_always killall -9 swayidle; swayidle -w \
+exec_always killall -9 swayidle; sleep 1; swayidle -w \
     timeout 120 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
     timeout 122 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
     timeout 123 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
@@ -65,7 +69,7 @@ exec_always killall -9 swayidle; swayidle -w \
     timeout 213 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
     timeout 214 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
     timeout 215 '~/.config/sway/scripts/brightness.sh strange all auto' resume "swaymsg 'exec ~/.config/sway/scripts/brightness.sh \$currentBrightness all auto'" \
-    timeout 300 'systemctl suspend'
+    timeout 1800 'systemctl suspend'
 #    timeout 1800 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
     
 bindsym $mod+Ctrl+Alt+XF86AudioRaiseVolume exec swaynagmode -m "brightness: $currentBrightness"
