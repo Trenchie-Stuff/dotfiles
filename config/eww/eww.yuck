@@ -1,0 +1,67 @@
+(defwindow powermenu
+    :monitor 1 ;; wayland users may need this
+    :stacking "bottom"
+    :exclusive true
+    :windowtype "dock"
+    :wm-ignore true
+    :geometry (geometry :width "100%" :height "10%")
+    (powermenu_layout))
+  
+  (defpoll time :interval "5s"
+    :initial `date +'{"hour":"%H","min":"%M"}'`
+    `date +'{"hour":"%H","min":"%M"}'`)
+  (defpoll net :interval "100s"
+    :initial `N/A`
+    `nmcli -t -f SIGNAL,ACTIVE device wifi \
+      | awk -F':' '{if($2=="yes")print$1}'`)
+  
+  (defwidget powermenu_layout []
+    (box :class "layout-box" :space-evenly false :orientation "vertical"
+         :style "background-image: url('./wallpaper')"
+      (box :valign "start" :space-evenly false :spacing 25
+        (_sundial)
+        (label :text "|" :class "sep")
+        (button :onclick "eww close powermenu" :class "close-btn" "󰅙"))
+      (box :space-evenly false :hexpand true :vexpand true
+        (_buttons :shutdown "poweroff" :reboot "reboot"
+                  :logout "swaymsg exit"
+                  :shutdown_icon "" :reboot_icon "󰜉"
+                  :logout_icon "󰗼"))))
+  
+  (defwidget _buttons [shutdown shutdown_icon reboot
+                      reboot_icon logout logout_icon]
+    (box :class "btns-box" :spacing 20
+         :vexpand true :hexpand true
+         :valign "start" :halign "end"
+         :space-evenly false
+      (label :text "󰥔")
+      (label :text "${time.hour}:${time.min}")
+      (button :onclick shutdown shutdown_icon)
+      (button :onclick reboot reboot_icon)
+      (button :onclick logout logout_icon)))
+  
+  (defwidget _sundial []
+    (label :class "sundial-lbl" :halign "end" :hexpand true
+           :text {time.hour >= 2 && time.hour <= 4 ? "󰖔" :
+                 time.hour <= 5 ? "" :
+                 time.hour >= 6
+                  && (time.hour <= 8 && time.min <= 59)
+                    ? "" :
+                 time.hour >= 9
+                   && (time.hour <= 11 && time.min <= 59)
+                     ? "󰖙" :
+                 time.hour == 12 && time.min <= 29
+                   ? "󰖙" :
+                 time.hour >= 12 && time.hour <= 16
+                   ? "󰖙" :
+                 time.hour > 16 && time.hour <= 17
+                   ? "󰖙" :
+                 (time.hour >= 17 && time.min <= 1)
+                   || (time.hour <= 18 && time.min <= 20)
+                     ? "󰖚" :
+                 time.hour >= 18 && time.hour <= 19
+                   ? "󰖚" :
+                 time.hour > 19 && time.hour <= 21
+                   ? "󰖔" :
+                 time.hour > 21 ? "󰖔" : "󰖔"}))
+                 

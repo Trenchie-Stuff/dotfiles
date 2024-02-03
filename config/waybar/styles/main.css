@@ -78,7 +78,7 @@ button:hover
   margin-left: 0px;
 }
 
-#clock, #custom-lyrics, #custom-duodclock, #custom-pad_left, #custom-title, #custom-artist, #custom-power, #battery, #idle_inhibitor, #temperature, #custom-keyboard-layout, #backlight, #network, #pulseaudio, #mode, #custom-yay, #custom-backlight, #window, #tray, #custom-launcher, #custom-ddate, #custom-rightend, #custom-right_leftend, #custom-center_leftend
+#clock, #custom-lyrics, #custom-subtitles, #custom-duodclock, #custom-pad_left, #custom-title, #custom-artist, #custom-power, #battery, #idle_inhibitor, #temperature, #custom-keyboard-layout, #backlight, #network, #pulseaudio,  #pulseaudio-slider, #mode, #custom-yay, #custom-backlight, #window, #tray, #custom-launcher, #custom-ddate, #custom-rightend, #custom-right_leftend, #custom-center_leftend
 {
   margin-right: 2px;
   margin-left: 2px;
@@ -86,6 +86,7 @@ button:hover
   border-radius: 0;
   padding-left: 10px;
   padding-right: 10px;
+  
 }
 
 #temperature {
@@ -94,6 +95,10 @@ button:hover
 
 #custom-artist, #custom-pad_left {
   background: @bg;
+}
+
+#custom-subtitles {
+  background: @lcars9;
 }
 
 #custom-duodclock, #custom-power, #battery, #temperature, #custom-keyboard-layout, #backlight, #mode, #custom-ddate
@@ -147,7 +152,8 @@ button:hover
   background: @lcars8;
 }
 
-#pulseaudio, #custom-backlight, #idle_inhibitor
+
+#pulseaudio, #pulseaudio-slider, #custom-backlight, #idle_inhibitor
 {
   background: @bg;
 }
@@ -180,6 +186,20 @@ button:hover
   margin-bottom: 0px;
 }
 
+#pulseaudio-slider slider
+{
+  background: @bg;
+  min-width: 50px;
+  min-height: 50px;
+  margin-right: 2px;
+  margin-left: 2px;
+  margin-bottom: 0px;
+  border-radius: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#pulseaudio-slider,
 #pulseaudio, #custom-backlight
 {
     min-width: 50px;

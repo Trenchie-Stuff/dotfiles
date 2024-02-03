@@ -1,0 +1,20 @@
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+
+exec = 'killall -9 waybar'
+exec = 'sleep 0.1; waybar -c ~/.config/waybar/config'
+exec = 'sleep 0.2; waybar -c ~/.config/waybar/styleBar'
+
+# bar
+# {
+#   id 10
+#   swaybar_command echo
+# }
+
+# bar
+# {
+#   id 20
+#   swaybar_command echo
+# }

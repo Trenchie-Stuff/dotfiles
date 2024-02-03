@@ -6,7 +6,7 @@
   margin-right: 0px;
   padding-bottom: 2px;
   min-width: 313px;
-  border-radius: 50%/100% 0.001px 0.001px 0.001px;
+  border-radius: 100px 0.001px 0.001px 0.001px;
   font-size: 11pt;
   border: 0px solid @lcars1;
   background: @lcars1;

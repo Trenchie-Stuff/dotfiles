@@ -4,7 +4,8 @@
 
 set $pDisplay "ASR PG34WQ15R2B 0x00000133"
 set $pWidth 3440
-set $sDisplay "HP Inc. HP E27u G4 CN424204BW"
+set $sDisplay "Beihai Century Joint Innovation Technology Co.,Ltd V3L6W 0000000000000"
+set $tDisplay DP-4
 
 set $menu bemenu -M 0 -W 1.0 -p 'LCARS' -P '>' -i -l 20 -w --fixed-height -n --scrollbar none -B 4 --bdr '#000000'  --fn 'Antonio 20' --scb '#b59cce' --scf '#000000' --tb '#b59cce' --tf '#000000' --fb '#553c63' --ff '#ffffff' --cf '#000000' --cb '#b59cce' --nb '#b59cce' --nf '#000000' --hb '#553c6e' --hf '#ffffff' --sb '#f6ef95' --sf '#000000' --ab '#c5Acde' --af '#000000'
 

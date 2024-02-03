@@ -15,27 +15,24 @@
             "custom/artist",
             "custom/title",
             "custom/lyrics",
+            //"custom/subtitles",
             "custom/power",
             "custom/rightend",
         ],
         "modules-center": [
-            "custom/center_leftend",
-            "sway/mode",
-            "clock#date",
-            "clock#PST",
-            "clock#MST",
-            "clock#CST",
-            "clock#EST",
-            "idle_inhibitor",
-            "custom/launcher",
-            "custom/rightend"
         ],
         "modules-right": [
             "custom/right_leftend",
             // "sway/window",
+            "sway/mode",
+            "clock#date",
+//            "clock#CST",
+            "clock#EST",
+            "idle_inhibitor",
+//            "custom/launcher",
             "custom/yay",
             "tray",
-            "temperature#temp1",
+//            "temperature#temp1",
             "temperature#temp2",
             "network",
             "custom/backlight",
@@ -137,16 +134,6 @@
             "spacing": 5
         },
         
-        "custom/artist": {
-            "rotate": 0,
-            "format":" {} ",
-            "align": 0,
-            "tooltip": false,
-            "interval": 1,
-            "exec": "playerctl metadata --format '{{ trunc(xesam:albumArtist,35) }}'",
-            "escape": true
-        },
-        
         "custom/pad_left": {
             "rotate": 0,
             "format":"  {}   ",
@@ -155,13 +142,27 @@
             "exec": "echo '  '"
         },
         
+        "custom/artist": {
+            "rotate": 0,
+            "format":" {} ",
+            "align": 0,
+            "tooltip": false,
+            "interval": 1,
+            "exec": "playerctl metadata --format '{{ trunc(xesam:albumArtist,35) }}'",
+            "escape": true,
+            "on-click": "playerctl next",
+            "on-click-right": "playerctl previous",
+        },
+        
         "custom/title": {
             "rotate": 0,
             "align": 0,
             "tooltip": false,
             "interval": 1,
             "exec": "playerctl metadata --format '{{ trunc(title,35) }}'",
-            "escape": true
+            "escape": true,
+            "on-click": "playerctl play-pause",
+            "on-click-right": "playerctl play-pause",
         },
         
         "custom/lyrics": {
@@ -169,10 +170,20 @@
             "format":"{}",
             "align": 0,
             "tooltip": false,
-            "exec": "sptlrx pipe",
+            "exec": "sptlrx pipe 2> /dev/null",
             "on-click": "footclient -T sptlrx sptlrx",
             "escape": true
         },
+
+        "custom/subtitles": {
+            "rotate": 0,
+            "format":"{}",
+            "align": 0,
+            "tooltip": false,
+            "exec": "/local/git/SubtitlePipe/app/SubtitlePipe",
+            "escape": true
+        },
+
         // "clock#date": {
         //     "format": "{:%H:%M}  ",
         //     "format-alt": "{:%A, %B %d, %Y (%R)}  ",
@@ -268,14 +279,15 @@
             "tooltip-format" : "{ifname}\n{ipaddr}",
             "tooltip-format-wifi" : "{essid} {ifname}\n{ipaddr}\nstrength: {signalStrength}%"
         },
-
         "pulseaudio": {
             "rotate": 0,
             "align": 0,
-            "scroll-step": 5,
+            "scroll-step": 2,
+            "tooltip": true,
             "format": "{icon}{volume}",
             "format-bluetooth": "󰂯 {volume}",
             "format-muted":"󰝟 {volume}",
+            "max-volume": 125,
             "format-icons": {
                 "headphones": "",
                 "handsfree": "",
@@ -285,7 +297,8 @@
                 "car": "",
                 "default": ["  ", " "]
             },
-            "on-click": "pavucontrol"
+            "on-right-click": "pavucontrol",
+            "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
         },
 
         "custom/center_leftend" : {
@@ -335,8 +348,8 @@
             "custom/top_left_album",
             "custom/top_left_year",
             "custom/top_left_extension",
-            "custom/top_left_bottom_edge"
-//            "cava#bottom",
+            "custom/top_left_bottom_edge",
+            "cava#bottom",
         ],
         "modules-center": [
         ],
@@ -371,13 +384,17 @@
         "wlr/taskbar": {
             "all-outputs": true,
             "format": "{app_id} ## {title}",
+//            "format": "{icon} {title}",
             "rewrite": {
                 "^.* ## (.{30}).* ([^ ]+)$": "$2 $1..",
                 "^.* ## (.{1,30}).*$": "$1..",
+                "^(.{30}).* ([^ ]+)$": "$2 $1..",
+                "^(.{1,30}).*$": "$1..",
            },
            "on-click": "activate",
            "on-click-right": "fullscreen",
-           "sort-by-app-id": true
+           "on-click-middle": "maximize",
+//           "sort-by-app-id": true
         },
         "custom/top_left_edge_curve" : {
             "rotate": 0,

@@ -3,4 +3,4 @@
 
 #for_window [app_id="org.gnome.Calculator"] floating enable
 
-for_window [title="sptlrx"] floating enable
+#for_window [title="sptlrx"] floating enable

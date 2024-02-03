@@ -2,6 +2,8 @@ output $pDisplay bg ~/Wallpapers/$pWidth.png fill
 
 output $sDisplay bg ~/Wallpapers/spacedock.gif fit #000000
 
+output $tDisplay bg ~/Wallpapers/spacedock.gif fit #000000
+
 set $wallpaper mpvpaper '*' ~/Wallpapers/active.mp4
 
 exec_always 'killall -9 mako; sleep 2; mako'
@@ -72,7 +74,7 @@ exec_always killall -9 swayidle; sleep 1; swayidle -w \
     timeout 1800 'systemctl suspend'
 #    timeout 1800 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
     
-bindsym $mod+Ctrl+Alt+XF86AudioRaiseVolume exec swaynagmode -m "brightness: $currentBrightness"
+#bindsym $mod+Ctrl+Alt+XF86AudioRaiseVolume exec swaynagmode -m "brightness: $currentBrightness"
          
 # timeout 30 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 

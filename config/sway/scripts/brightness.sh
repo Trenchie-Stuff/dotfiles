@@ -32,7 +32,8 @@ fi
 
 if [[ $2 = 'all' ]]; then
   ddcutil setvcp 10 $sB --sleep-multiplier 0.1 --bus 0xa --noverify -t
-  ddcutil setvcp 10 $sB --sleep-multiplier 0.1 --bus 0xb --noverify
+  ddcutil setvcp 10 $sB --sleep-multiplier 0.1 --bus 0x9 --noverify -t
+  ddcutil setvcp 10 $sB --sleep-multiplier 0.1 --bus 0x10 --noverify
 else
   ddcutil setvcp 10 $sB --sleep-multiplier 0.1 --bus $2 --noverify
 fi

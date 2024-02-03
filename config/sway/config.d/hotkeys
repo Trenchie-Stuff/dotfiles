@@ -48,12 +48,20 @@ bindsym $mod+Ctrl+Shift+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightn
 bindsym $mod+Ctrl+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 0 0xa manual
 bindsym $mod+Ctrl+Shift+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 100 0xa manual
 
-bindsym $mod+Alt+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh down 0xb manual
-bindsym $mod+Alt+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh up 0xb manual
-bindsym $mod+Alt+Shift+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh bottom 0xb manual
-bindsym $mod+Alt+Shift+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh top 0xb manual
-bindsym $mod+Alt+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 0 0xb manual
-bindsym $mod+Alt+Shift+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 100 0xb manual
+bindsym $mod+Alt+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh down 0x9 manual
+bindsym $mod+Alt+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh up 0x9 manual
+bindsym $mod+Alt+Shift+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh bottom 0x9 manual
+bindsym $mod+Alt+Shift+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh top 0x9 manual
+bindsym $mod+Alt+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 0 0x9 manual
+bindsym $mod+Alt+Shift+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 100 0x9 manual
+
+
+bindsym $mod+Ctrl+Alt+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh down 0x10 manual
+bindsym $mod+Ctrl+Alt+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh up 0x10 manual
+bindsym $mod+Ctrl+Alt+Shift+XF86AudioLowerVolume exec ~/.config/sway/scripts/brightness.sh bottom 0x10 manual
+bindsym $mod+Ctrl+Alt+Shift+XF86AudioRaiseVolume exec ~/.config/sway/scripts/brightness.sh top 0x10 manual
+bindsym $mod+Ctrl+Alt+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 0 0x10 manual
+bindsym $mod+Ctrl+Alt+Shift+XF86AudioMute exec ~/.config/sway/scripts/brightness.sh 100 0x10 manual
 
 ##################### [ Apps ] #####################
 
@@ -61,6 +69,6 @@ bindsym XF86Calculator exec gnome-calculator
 
 ##################### [ Env ] #####################
 
-bindsym $mod+Shift+Escape exec ~/.config/sway/scripts/changeResolution.sh
+#bindsym $mod+Shift+Escape exec ~/.config/sway/scripts/changeResolution.sh
 
 bindsym $mod+Tab exec ~/.config/sway/scripts/toggleBars.sh
